@@ -40,6 +40,8 @@
 </head>
 <body>
 
+<div class="progresso" id="progresso" aria-hidden="true"></div>
+
 <!-- símbolo -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
@@ -65,17 +67,23 @@
       <span><span class="n">Rochaa</span><span class="d">Corporation</span></span>
     </a>
     <nav>
-      <a href="#sobre">Quem somos</a>
-      <a href="#processo">Como funciona</a>
-      <a href="#trabalhos">Trabalhos</a>
-      <a href="#precos">Preço</a>
-      <a class="btn btn-1" href="#contato">Falar no WhatsApp</a>
+      <div class="nav-links" id="navLinks">
+        <a href="#sobre">Quem somos</a>
+        <a href="#processo">Como funciona</a>
+        <a href="#trabalhos">Trabalhos</a>
+        <a href="#precos">Preço</a>
+      </div>
+      <button class="hamb" id="hamb" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="btn btn-1" href="#contato"><span class="txt-full">Falar no WhatsApp</span><span class="txt-curto">WhatsApp</span></a>
     </nav>
   </div>
 </header>
 
 <!-- ================= HERO ================= -->
-<div class="hero">
+<div class="hero" id="hero">
+  <div class="orbes" aria-hidden="true"><span class="orbe orbe-1"></span><span class="orbe orbe-2"></span></div>
   <div class="wrap">
     <div>
       <div class="eyebrow"><span class="pt"></span><span>Rio de Janeiro · RJ</span></div>
