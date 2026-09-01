@@ -1,6 +1,6 @@
 // cabeçalho
 const h = document.getElementById('topo');
-addEventListener('scroll', () => h.classList.toggle('scrolled', scrollY > 20), {passive:true});
+if (h) addEventListener('scroll', () => h.classList.toggle('scrolled', scrollY > 20), {passive:true});
 
 // reveal
 const io = new IntersectionObserver((es) => {
@@ -33,19 +33,21 @@ function animarPreco(el) {
   requestAnimationFrame(passo);
 }
 
-// busca digitando
-const alvo = document.getElementById('q');
-const texto = 'barbearia perto de mim';
+// busca digitando (só existe na home)
 const parado = matchMedia('(prefers-reduced-motion: reduce)').matches;
-if (parado) { alvo.textContent = texto; }
-else {
-  let i = 0;
-  const escrever = () => {
-    alvo.textContent = texto.slice(0, i);
-    i++;
-    if (i <= texto.length) setTimeout(escrever, 68);
-  };
-  setTimeout(escrever, 700);
+const alvoBusca = document.getElementById('q');
+if (alvoBusca) {
+  const texto = 'barbearia perto de mim';
+  if (parado) { alvoBusca.textContent = texto; }
+  else {
+    let i = 0;
+    const escrever = () => {
+      alvoBusca.textContent = texto.slice(0, i);
+      i++;
+      if (i <= texto.length) setTimeout(escrever, 68);
+    };
+    setTimeout(escrever, 700);
+  }
 }
 
 // menu mobile

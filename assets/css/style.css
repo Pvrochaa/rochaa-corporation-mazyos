@@ -175,6 +175,9 @@ section{padding:100px 0;position:relative}
 @media(max-width:900px){.g3{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.g3{grid-template-columns:1fr}}
 
+.g5{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
+@media(max-width:640px){.g5{grid-template-columns:1fr}}
+
 .card{background:var(--obsidiana-2);border:1px solid var(--linha);border-radius:4px;padding:30px}
 .card h3{font-size:19px;margin-bottom:12px;font-variation-settings:'wdth' 108,'wght' 750}
 .card p{color:#A9A4BA;font-size:15px;margin:0}
@@ -231,7 +234,7 @@ section{padding:100px 0;position:relative}
   .escopo .nao{border-left:0;border-top:1px solid var(--linha)}}
 
 /* ---------- processo ---------- */
-.passos{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:16px}
+.passos{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:16px}
 .passo{padding:30px 24px 30px 0;border-top:2px solid var(--linha);position:relative}
 .passo::after{content:"";position:absolute;top:-2px;left:0;height:2px;width:0;
   background:var(--grad);transition:width .8s ease}
@@ -246,8 +249,6 @@ section{padding:100px 0;position:relative}
 /* ---------- depoimentos ---------- */
 .depoimento{background:var(--obsidiana-2);border:1px solid var(--linha);border-radius:4px;
   padding:28px;position:relative}
-.depoimento .exemplo{position:absolute;top:16px;right:16px;font-size:9px;
-  border:1px solid var(--linha);padding:3px 9px;border-radius:100px}
 .depoimento .estrelas{color:var(--quartzo);font-size:15px;letter-spacing:2px;margin-bottom:16px}
 .depoimento p{font-size:15px;color:#C6C1D4;margin:0 0 22px;line-height:1.6}
 .depoimento .autor strong{display:block;font-size:14.5px;color:var(--calcario);
@@ -255,6 +256,10 @@ section{padding:100px 0;position:relative}
   text-transform:uppercase;letter-spacing:.01em}
 .depoimento .autor span{font-family:"JetBrains Mono",monospace;font-size:10px;
   letter-spacing:.1em;text-transform:uppercase;color:var(--grafite);margin-top:4px;display:block}
+.depoimento.placeholder{border-style:dashed;background:transparent;min-height:168px;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.depoimento.placeholder .estrelas{color:var(--linha);margin-bottom:14px}
+.depoimento.placeholder .aguardando{margin:0;color:var(--grafite);font-size:14px;max-width:26ch}
 
 /* ---------- portfólio ---------- */
 .obra{border:1px solid var(--linha);border-radius:4px;overflow:hidden;
@@ -410,13 +415,16 @@ footer .col a{display:block;font-size:14px;color:#A9A4BA;text-decoration:none;ma
 footer .col a:hover{color:var(--quartzo)}
 footer .base{border-top:1px solid var(--linha);margin-top:42px;padding-top:26px;
   display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer .base a.mono{text-decoration:none;transition:color .18s}
+footer .base a.mono:hover{color:var(--quartzo)}
 
 /* ---------- reveal ---------- */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .rv.on{opacity:1;transform:none}
-.g3>.rv:nth-child(2),.principios>.rv:nth-child(2),.planos>.rv:nth-child(2),.passos>.rv:nth-child(2){transition-delay:.09s}
-.g3>.rv:nth-child(3),.principios>.rv:nth-child(3),.planos>.rv:nth-child(3),.passos>.rv:nth-child(3){transition-delay:.18s}
-.principios>.rv:nth-child(4),.planos>.rv:nth-child(4),.passos>.rv:nth-child(4){transition-delay:.27s}
+.g3>.rv:nth-child(2),.g5>.rv:nth-child(2),.principios>.rv:nth-child(2),.planos>.rv:nth-child(2),.passos>.rv:nth-child(2){transition-delay:.09s}
+.g3>.rv:nth-child(3),.g5>.rv:nth-child(3),.principios>.rv:nth-child(3),.planos>.rv:nth-child(3),.passos>.rv:nth-child(3){transition-delay:.18s}
+.g5>.rv:nth-child(4),.principios>.rv:nth-child(4),.planos>.rv:nth-child(4),.passos>.rv:nth-child(4){transition-delay:.27s}
+.g5>.rv:nth-child(5){transition-delay:.36s}
 
 /* ---------- interações (tilt / magnético) ---------- */
 .obra{transform-style:preserve-3d}
