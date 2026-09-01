@@ -281,24 +281,93 @@
 
 <hr class="corte">
 
+<!-- ================= DEPOIMENTOS ================= -->
+<section id="depoimentos">
+  <div class="wrap">
+    <div class="cab rv">
+      <span class="num">05 — Depoimentos</span>
+      <h2>O que os clientes vão poder dizer</h2>
+      <p>A Rochaa ainda não tem avaliação publicada de cliente real — é nova. Isto é um exemplo de como a seção fica assim que os primeiros depoimentos chegarem.</p>
+    </div>
+    <div class="g3">
+      <div class="depoimento rv">
+        <span class="exemplo mono">Exemplo</span>
+        <div class="estrelas" aria-label="5 de 5 estrelas">★★★★★</div>
+        <p>"Fechei o site numa conversa só, sem enrolação. Em uma semana já tava recebendo mensagem no WhatsApp direto de gente que me achou no Google."</p>
+        <div class="autor"><strong>Zé</strong><span>Barbearia do Zé · Tijuca</span></div>
+      </div>
+      <div class="depoimento rv">
+        <span class="exemplo mono">Exemplo</span>
+        <div class="estrelas" aria-label="5 de 5 estrelas">★★★★★</div>
+        <p>"Rodou mais rápido do que eu esperava. Hoje apareço na busca do bairro e o cliente já chega sabendo o preço, sem precisar perguntar tudo no direct."</p>
+        <div class="autor"><strong>Studio Corte Fino</strong><span>Salão · Rio de Janeiro</span></div>
+      </div>
+      <div class="depoimento rv">
+        <span class="exemplo mono">Exemplo</span>
+        <div class="estrelas" aria-label="5 de 5 estrelas">★★★★★</div>
+        <p>"Cansei de agência que demorava um mês pra trocar uma foto do cardápio. Aqui é direto com quem faz, sem intermediário."</p>
+        <div class="autor"><strong>Cantina da Vila</strong><span>Restaurante · Rio de Janeiro</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="corte">
+
 <!-- ================= PREÇOS ================= -->
 <section id="precos">
   <div class="wrap">
     <div class="cab rv">
-      <span class="num">05 — Preço</span>
+      <span class="num">06 — Preço</span>
       <h2>Quatro caminhos, sem letra miúda</h2>
       <p>Sinal de 30% ao fechar, 70% na entrega. Nota fiscal emitida. Se o layout não for aprovado, você fica com os arquivos do desenho e não paga o restante.</p>
     </div>
+
+    <div class="seletor rv" id="seletor">
+      <div class="seletor-cab">
+        <span class="mono">Não sabe qual escolher?</span>
+        <h3>Responde 3 perguntas rápidas</h3>
+      </div>
+      <div class="perguntas">
+        <div class="pergunta" data-pergunta="site">
+          <span>Já tem um site no ar?</span>
+          <div class="opcoes">
+            <button type="button" data-valor="sim">Já tenho</button>
+            <button type="button" data-valor="nao">Não tenho</button>
+          </div>
+        </div>
+        <div class="pergunta" data-pergunta="crm">
+          <span>Quer um painel pra organizar seus clientes (agenda, histórico)?</span>
+          <div class="opcoes">
+            <button type="button" data-valor="sim">Quero</button>
+            <button type="button" data-valor="nao">Não preciso</button>
+          </div>
+        </div>
+        <div class="pergunta" data-pergunta="crescer">
+          <span>Quer que a Rochaa cuide de anúncio pago e conteúdo todo mês?</span>
+          <div class="opcoes">
+            <button type="button" data-valor="sim">Quero</button>
+            <button type="button" data-valor="nao">Não agora</button>
+          </div>
+        </div>
+      </div>
+      <div class="resultado" id="resultado" hidden>
+        <span class="mono">Seu plano é</span>
+        <strong id="resultadoNome"></strong>
+        <a href="#" id="resultadoLink" class="btn btn-2">Ver esse plano ↓</a>
+      </div>
+    </div>
+
     <div class="planos">
-      <div class="plano destaque rv">
-        <div class="fita">Comece aqui</div>
+      <div class="plano destaque rv" id="plano-site">
+        <div class="tag">Comece aqui</div>
         <h3>Site completo</h3>
         <div class="desc">Tudo que um negócio local precisa para existir na internet.</div>
-        <div class="valor"><span class="n">R$ 1.500</span><span class="u">pagamento único</span></div>
+        <p class="entrega">Você manda o que vende e as fotos que tiver, aprova o layout no dia 3 e recebe o site publicado no seu domínio no dia 7 — com o Google Meu Negócio já configurado e o WhatsApp em todas as seções.</p>
+        <div class="valor"><span class="n" data-valor="1500">R$ 1.500</span><span class="u">pagamento único</span></div>
         <div class="cond">R$ 450 de sinal + R$ 1.050 na entrega &middot; Ou 3× de R$ 500 sem juros &middot; Entrega em 7 dias</div>
         <ul>
           <li>Site de até 5 seções, feito sob medida</li>
-          <li>Funciona bem no celular (é onde 8 em cada 10 vão acessar)</li>
           <li>Botão de WhatsApp em todas as seções</li>
           <li>Cardápio, catálogo ou lista de serviços</li>
           <li>Google Meu Negócio configurado e verificado</li>
@@ -309,10 +378,11 @@
         <a class="btn btn-1" href="#contato">Começar meu site</a>
       </div>
 
-      <div class="plano rv">
+      <div class="plano rv" id="plano-manutencao">
         <h3>Manutenção</h3>
         <div class="desc">Para quem já tem o site. Opcional, contrate depois se fizer sentido.</div>
-        <div class="valor"><span class="n">R$ 300</span><span class="u">por mês</span></div>
+        <p class="entrega">Você manda o que precisa mudar pelo WhatsApp e a alteração sai dentro do mês, com hospedagem, domínio e backup semanal cobertos — sem aprender a mexer em nada e sem fidelidade.</p>
+        <div class="valor"><span class="n" data-valor="300">R$ 300</span><span class="u">por mês</span></div>
         <div class="cond">Sem fidelidade · Cancele quando quiser</div>
         <ul>
           <li>Hospedagem, domínio e certificado de segurança</li>
@@ -324,10 +394,11 @@
         <a class="btn btn-2" href="#contato">Tirar dúvida</a>
       </div>
 
-      <div class="plano rv">
+      <div class="plano rv" id="plano-crm">
         <h3>Site + CRM</h3>
         <div class="desc">Para quem precisa organizar a base de clientes, não só existir na internet.</div>
-        <div class="valor"><span class="n">R$ 2.900</span><span class="u">+ R$ 300/mês</span></div>
+        <p class="entrega">Além do site pronto em 7 dias, você recebe um painel só seu — em até 10 semanas — pra parar de controlar cliente por planilha: cadastro, histórico de atendimento, agenda e origem de cada contato, com backup diário.</p>
+        <div class="valor"><span class="n" data-valor="2900">R$ 2.900</span><span class="u">+ R$ 300/mês</span></div>
         <div class="cond">Manutenção obrigatória, inclui hospedagem do banco e backup diário &middot; Site em 7 dias, CRM em até 10 semanas</div>
         <div class="grupo">Tudo do plano Site</div>
         <ul>
@@ -354,16 +425,16 @@
         <a class="btn btn-2" href="#contato">Quero o CRM</a>
       </div>
 
-      <div class="plano destaque rv">
-        <div class="fita">Evolua aqui</div>
+      <div class="plano destaque rv" id="plano-crescimento">
+        <div class="tag">Evolua aqui</div>
         <h3>Crescimento</h3>
         <div class="desc">O pacote fechado: site, manutenção e divulgação num valor só.</div>
-        <div class="valor"><span class="n">R$ 2.400</span><span class="u">por mês</span></div>
+        <p class="entrega">A Rochaa toca o site, o painel de clientes e a manutenção, e ainda cuida do anúncio pago e do conteúdo — você recebe um relatório simples todo mês mostrando quanto custou cada contato novo, sem virar gerente de marketing.</p>
+        <div class="valor"><span class="n" data-valor="2400">R$ 2.400</span><span class="u">por mês</span></div>
         <div class="cond">Site e CRM inclusos, sem taxa de adesão &middot; Verba de anúncio à parte &middot; Fidelidade mínima de 3 meses</div>
         <div class="grupo">O site</div>
         <ul>
           <li>Site de até 5 seções, feito sob medida</li>
-          <li>Funciona bem no celular</li>
           <li>Botão de WhatsApp em todas as seções</li>
           <li>Cardápio, catálogo ou lista de serviços</li>
           <li>Google Meu Negócio configurado e verificado</li>
@@ -405,7 +476,7 @@
 <section>
   <div class="wrap">
     <div class="cab rv">
-      <span class="num">06 — Dúvidas</span>
+      <span class="num">07 — Dúvidas</span>
       <h2>O que costumam perguntar</h2>
     </div>
     <div class="faq rv">

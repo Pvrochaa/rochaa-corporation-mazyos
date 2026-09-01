@@ -4,9 +4,34 @@ addEventListener('scroll', () => h.classList.toggle('scrolled', scrollY > 20), {
 
 // reveal
 const io = new IntersectionObserver((es) => {
-  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+  es.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('on');
+      const preco = e.target.querySelector('.valor .n[data-valor]');
+      if (preco) animarPreco(preco);
+      io.unobserve(e.target);
+    }
+  });
 }, {threshold:.15, rootMargin:'0px 0px -40px'});
 document.querySelectorAll('.rv, .passo').forEach(el => io.observe(el));
+
+// contagem animada dos preços
+function animarPreco(el) {
+  const alvo = parseInt(el.dataset.valor, 10);
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || !alvo) {
+    el.textContent = 'R$ ' + alvo.toLocaleString('pt-BR');
+    return;
+  }
+  const duracao = 900;
+  const inicio = performance.now();
+  const passo = (agora) => {
+    const t = Math.min((agora - inicio) / duracao, 1);
+    const facil = 1 - Math.pow(1 - t, 3);
+    el.textContent = 'R$ ' + Math.round(alvo * facil).toLocaleString('pt-BR');
+    if (t < 1) requestAnimationFrame(passo);
+  };
+  requestAnimationFrame(passo);
+}
 
 // busca digitando
 const alvo = document.getElementById('q');
@@ -87,6 +112,15 @@ if (temMouse && !parado) {
     btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
   });
 
+  // planos: destaca o card em foco, apaga sutilmente os outros
+  const planos = document.querySelector('.planos');
+  if (planos) {
+    planos.querySelectorAll('.plano').forEach(p => {
+      p.addEventListener('mouseenter', () => planos.classList.add('comparando'));
+      p.addEventListener('mouseleave', () => planos.classList.remove('comparando'));
+    });
+  }
+
   // cards de trabalho com tilt 3D
   document.querySelectorAll('.obra').forEach(card => {
     card.addEventListener('mouseenter', () => card.classList.add('tilting'));
@@ -100,6 +134,55 @@ if (temMouse && !parado) {
       card.classList.remove('tilting');
       card.style.transform = '';
     });
+  });
+}
+
+// seletor "qual plano é seu"
+const seletor = document.getElementById('seletor');
+if (seletor) {
+  const respostas = {};
+  const resultado = document.getElementById('resultado');
+  const resultadoNome = document.getElementById('resultadoNome');
+  const resultadoLink = document.getElementById('resultadoLink');
+  const mapa = {
+    site: { id: 'plano-site', nome: 'Site completo' },
+    manutencao: { id: 'plano-manutencao', nome: 'Manutenção' },
+    crm: { id: 'plano-crm', nome: 'Site + CRM' },
+    crescimento: { id: 'plano-crescimento', nome: 'Crescimento' },
+  };
+
+  const calcular = () => {
+    if (respostas.crescer === 'sim') return mapa.crescimento;
+    if (respostas.crm === 'sim') return mapa.crm;
+    if (respostas.site === 'sim') return mapa.manutencao;
+    return mapa.site;
+  };
+
+  seletor.querySelectorAll('.pergunta').forEach(bloco => {
+    const chave = bloco.dataset.pergunta;
+    bloco.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        respostas[chave] = btn.dataset.valor;
+        bloco.querySelectorAll('button').forEach(b => b.classList.toggle('on', b === btn));
+
+        if (Object.keys(respostas).length < 3) return;
+        const plano = calcular();
+        resultadoNome.textContent = plano.nome;
+        resultadoLink.href = '#' + plano.id;
+        resultado.hidden = false;
+
+        document.querySelectorAll('.plano.recomendado').forEach(p => p.classList.remove('recomendado'));
+        const alvo = document.getElementById(plano.id);
+        if (alvo) alvo.classList.add('recomendado');
+      });
+    });
+  });
+
+  resultadoLink && resultadoLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    const plano = calcular();
+    const alvo = document.getElementById(plano.id);
+    if (alvo) alvo.scrollIntoView({behavior: parado ? 'auto' : 'smooth', block: 'center'});
   });
 }
 
