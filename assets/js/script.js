@@ -13,7 +13,7 @@ const io = new IntersectionObserver((es) => {
     }
   });
 }, {threshold:.15, rootMargin:'0px 0px -40px'});
-document.querySelectorAll('.rv, .passo').forEach(el => io.observe(el));
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
 
 // contagem animada dos preços
 function animarPreco(el) {

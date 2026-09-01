@@ -234,19 +234,6 @@ section{padding:100px 0;position:relative}
 @media(max-width:640px){.escopo{grid-template-columns:1fr}
   .escopo .nao{border-left:0;border-top:1px solid var(--linha)}}
 
-/* ---------- processo ---------- */
-.passos{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:16px}
-.passo{padding:30px 24px 30px 0;border-top:2px solid var(--linha);position:relative}
-.passo::after{content:"";position:absolute;top:-2px;left:0;height:2px;width:0;
-  background:var(--grad);transition:width .8s ease}
-.passo.on::after{width:100%}
-.passo .dia{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.15em;
-  text-transform:uppercase;color:var(--ametista);margin-bottom:14px}
-.passo h3{font-size:17px;margin-bottom:9px}
-.passo p{font-size:14px;color:#A9A4BA;margin:0}
-@media(max-width:900px){.passos{grid-template-columns:1fr 1fr;column-gap:24px}}
-@media(max-width:640px){.passos{grid-template-columns:1fr}.passo{padding-right:0}}
-
 /* ---------- depoimentos ---------- */
 .depoimento{background:var(--obsidiana-2);border:1px solid var(--linha);border-radius:4px;
   padding:28px;position:relative}
@@ -265,6 +252,7 @@ section{padding:100px 0;position:relative}
 /* ---------- portfólio ---------- */
 .obra{border:1px solid var(--linha);border-radius:4px;overflow:hidden;
   background:var(--obsidiana-2);text-decoration:none;display:block;
+  transform-style:preserve-3d;
   transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
 .obra:hover{transform:translateY(-4px);border-color:rgba(201,169,255,.32);
   box-shadow:0 22px 46px -22px rgba(123,63,228,.55)}
@@ -423,13 +411,12 @@ footer .base-legal{display:flex;gap:18px;flex-wrap:wrap}
 /* ---------- reveal ---------- */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .rv.on{opacity:1;transform:none}
-.g3>.rv:nth-child(2),.g5>.rv:nth-child(2),.principios>.rv:nth-child(2),.planos>.rv:nth-child(2),.passos>.rv:nth-child(2){transition-delay:.09s}
-.g3>.rv:nth-child(3),.g5>.rv:nth-child(3),.principios>.rv:nth-child(3),.planos>.rv:nth-child(3),.passos>.rv:nth-child(3){transition-delay:.18s}
-.g5>.rv:nth-child(4),.principios>.rv:nth-child(4),.planos>.rv:nth-child(4),.passos>.rv:nth-child(4){transition-delay:.27s}
+.g3>.rv:nth-child(2),.g5>.rv:nth-child(2),.principios>.rv:nth-child(2),.planos>.rv:nth-child(2){transition-delay:.09s}
+.g3>.rv:nth-child(3),.g5>.rv:nth-child(3),.principios>.rv:nth-child(3),.planos>.rv:nth-child(3){transition-delay:.18s}
+.g5>.rv:nth-child(4),.principios>.rv:nth-child(4),.planos>.rv:nth-child(4){transition-delay:.27s}
 .g5>.rv:nth-child(5){transition-delay:.36s}
 
 /* ---------- interações (tilt / magnético) ---------- */
-.obra{transform-style:preserve-3d}
 @media(pointer:fine){
   .obra.tilting{transition:border-color .2s ease,box-shadow .2s ease}
   .btn-1.magnet{transition:box-shadow .16s ease}
@@ -437,5 +424,4 @@ footer .base-legal{display:flex;gap:18px;flex-wrap:wrap}
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
   .rv{opacity:1;transform:none}
-  .passo::after{width:100%}
 }
