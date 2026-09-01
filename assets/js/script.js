@@ -189,7 +189,7 @@ if (seletor) {
 // faq com abertura suave
 document.querySelectorAll('.faq details').forEach(det => {
   const summary = det.querySelector('summary');
-  const painel = det.querySelector('p');
+  const painel = det.querySelector('.resposta');
   if (!summary || !painel) return;
   if (parado) return; // deixa o navegador abrir/fechar na hora, sem animação
   summary.addEventListener('click', (e) => {

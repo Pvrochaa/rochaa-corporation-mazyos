@@ -301,6 +301,9 @@ section{padding:100px 0;position:relative}
   padding:30px 32px;margin-bottom:40px}
 .seletor-cab{margin-bottom:22px}
 .seletor-cab h3{font-size:19px;margin-top:8px}
+.seletor-cab .dica{font-size:13px;color:var(--grafite);margin:10px 0 0}
+.seletor-cab .dica a{color:var(--quartzo);text-decoration:underline;text-underline-offset:2px}
+.seletor-cab .dica a:hover{color:var(--calcario)}
 .perguntas{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 @media(max-width:900px){.perguntas{grid-template-columns:1fr}}
 .pergunta{display:flex;flex-direction:column;gap:12px}
@@ -322,6 +325,7 @@ section{padding:100px 0;position:relative}
 
 /* ---------- preços ---------- */
 .planos{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;align-items:stretch}
+@media(min-width:901px){#plano-crescimento{grid-column:1 / -1}}
 .plano .entrega{font-size:14px;color:#A9A4BA;margin:0 0 24px;line-height:1.55}
 .plano.recomendado{border-color:var(--quartzo);
   box-shadow:0 0 0 1px var(--quartzo),0 30px 60px -28px rgba(123,63,228,.65)}
@@ -375,9 +379,16 @@ section{padding:100px 0;position:relative}
 .faq summary::after{content:"+";font-family:"JetBrains Mono",monospace;font-size:22px;
   color:var(--ametista);flex:none;transition:transform .22s}
 .faq details[open] summary::after{transform:rotate(45deg)}
-.faq details p{display:block;margin:0;max-width:70ch;color:#A9A4BA;font-size:15.5px;
+.faq details .resposta{display:block;max-width:70ch;color:#A9A4BA;font-size:15.5px;
   overflow:hidden;max-height:0;opacity:0;transition:max-height .32s ease,opacity .28s ease}
-.faq details[open] p{max-height:600px;opacity:1;padding-bottom:24px}
+.faq details[open] .resposta{max-height:600px;opacity:1;padding-bottom:24px}
+.faq .resposta p{margin:0 0 14px}
+.faq .resposta p:last-child{margin-bottom:0}
+.faq .resposta ul{list-style:none;margin:0 0 16px;padding:0}
+.faq .resposta li{padding:6px 0 6px 22px;position:relative;color:#A9A4BA}
+.faq .resposta li::before{content:"→";position:absolute;left:0;color:var(--quartzo)}
+.faq .resposta li strong{color:var(--calcario);font-family:"Archivo",sans-serif;
+  font-variation-settings:'wdth' 106,'wght' 700}
 .faq summary:focus-visible{outline:2px solid var(--quartzo);outline-offset:3px}
 
 /* ---------- cta final ---------- */
