@@ -109,17 +109,9 @@ A LGPD exige que cada finalidade tenha uma base legal correspondente. Estas são
 
 ## 5. Cookies
 
-Nosso site utiliza cookies e tecnologias similares.
+No momento, este site **não utiliza cookies próprios de rastreamento nem ferramentas de análise de tráfego** (como Google Analytics). A única solicitação a terceiros feita pelo site é o carregamento das fontes tipográficas (Google Fonts), que não define cookie de rastreamento nesse tipo de uso.
 
-| Tipo | Função | Precisa de consentimento? |
-|---|---|---|
-| **Essenciais** | Funcionamento básico e segurança | Não |
-| **Desempenho** | Entender páginas mais acessadas | Sim |
-| **Terceiros** | Fontes tipográficas e recursos externos | Sim |
-
-Você pode recusar cookies não essenciais no banner exibido no primeiro acesso, ou desabilitá-los nas configurações do navegador. A recusa não impede o uso do site.
-
-Cookies essenciais são mantidos pela duração da sessão. Os demais, por até 12 meses.
+Se no futuro passarmos a usar cookies de desempenho ou ferramentas de análise, esta Política será atualizada com antecedência e, quando exigido pela LGPD, um mecanismo de consentimento será implementado antes de qualquer coleta não essencial.
 
 ---
 

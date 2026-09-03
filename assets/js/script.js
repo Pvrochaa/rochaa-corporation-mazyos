@@ -37,7 +37,7 @@ function animarPreco(el) {
 const parado = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const alvoBusca = document.getElementById('q');
 if (alvoBusca) {
-  const texto = 'barbearia perto de mim';
+  const texto = 'dentista perto de mim';
   if (parado) { alvoBusca.textContent = texto; }
   else {
     let i = 0;
@@ -114,15 +114,6 @@ if (temMouse && !parado) {
     btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
   });
 
-  // planos: destaca o card em foco, apaga sutilmente os outros
-  const planos = document.querySelector('.planos');
-  if (planos) {
-    planos.querySelectorAll('.plano').forEach(p => {
-      p.addEventListener('mouseenter', () => planos.classList.add('comparando'));
-      p.addEventListener('mouseleave', () => planos.classList.remove('comparando'));
-    });
-  }
-
   // cards de trabalho com tilt 3D
   document.querySelectorAll('.obra').forEach(card => {
     card.addEventListener('mouseenter', () => card.classList.add('tilting'));
@@ -149,13 +140,14 @@ if (seletor) {
   const mapa = {
     site: { id: 'plano-site', nome: 'Site completo' },
     manutencao: { id: 'plano-manutencao', nome: 'Manutenção' },
-    crm: { id: 'plano-crm', nome: 'Site + CRM' },
+    crm: { id: 'plano-crm-avulso', nome: 'CRM' },
     crescimento: { id: 'plano-crescimento', nome: 'Crescimento' },
   };
 
   const calcular = () => {
     if (respostas.crescer === 'sim') return mapa.crescimento;
-    if (respostas.crm === 'sim') return mapa.crm;
+    // CRM avulso só faz sentido pra quem já tem site; sem site, o jeito de ter os dois juntos é o Crescimento
+    if (respostas.crm === 'sim') return respostas.site === 'sim' ? mapa.crm : mapa.crescimento;
     if (respostas.site === 'sim') return mapa.manutencao;
     return mapa.site;
   };
@@ -173,7 +165,7 @@ if (seletor) {
         resultadoLink.href = '#' + plano.id;
         resultado.hidden = false;
 
-        document.querySelectorAll('.plano.recomendado').forEach(p => p.classList.remove('recomendado'));
+        document.querySelectorAll('.recomendado').forEach(p => p.classList.remove('recomendado'));
         const alvo = document.getElementById(plano.id);
         if (alvo) alvo.classList.add('recomendado');
       });
@@ -188,10 +180,15 @@ if (seletor) {
   });
 }
 
-// faq com abertura suave
-document.querySelectorAll('.faq details').forEach(det => {
+// evita que o botão dentro do sumário também abra/feche o acordeão
+document.querySelectorAll('.entrega-item.et-acc summary .btn').forEach(btn => {
+  btn.addEventListener('click', e => e.stopPropagation());
+});
+
+// faq e planos com painel expansível, abertura suave
+document.querySelectorAll('.faq details, .entrega-item.et-acc').forEach(det => {
   const summary = det.querySelector('summary');
-  const painel = det.querySelector('.resposta');
+  const painel = det.querySelector('.resposta, .et-detalhe');
   if (!summary || !painel) return;
   if (parado) return; // deixa o navegador abrir/fechar na hora, sem animação
   summary.addEventListener('click', (e) => {
