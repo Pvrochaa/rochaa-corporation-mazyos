@@ -130,6 +130,36 @@ if (temMouse && !parado) {
   });
 }
 
+// filtro de projetos por área
+const filtroObras = document.querySelector('.filtro-obras');
+if (filtroObras) {
+  const obras = document.querySelectorAll('.obra');
+  const aplicarFiltro = (alvo) => {
+    obras.forEach(o => {
+      const mostra = alvo === 'todos' || o.dataset.categoria === alvo;
+      if (mostra) {
+        o.hidden = false;
+        requestAnimationFrame(() => o.classList.remove('saindo'));
+      } else if (!o.hidden) {
+        o.classList.add('saindo');
+        const esconder = () => { o.hidden = true; };
+        o.addEventListener('transitionend', esconder, { once: true });
+        setTimeout(esconder, 480); // rede de segurança pra quem tem prefers-reduced-motion
+      }
+    });
+  };
+  filtroObras.querySelectorAll('.filtro').forEach(btn => {
+    btn.addEventListener('click', () => {
+      filtroObras.querySelectorAll('.filtro').forEach(b => {
+        const ativo = b === btn;
+        b.classList.toggle('on', ativo);
+        b.setAttribute('aria-pressed', String(ativo));
+      });
+      aplicarFiltro(btn.dataset.filtro);
+    });
+  });
+}
+
 // seletor "qual plano é seu"
 const seletor = document.getElementById('seletor');
 if (seletor) {

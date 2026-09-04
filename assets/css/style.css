@@ -249,32 +249,57 @@ section{padding:100px 0;position:relative}
 .card.destaque{background:rgba(123,63,228,.1);border-color:rgba(201,169,255,.32)}
 
 /* ---------- portfólio ---------- */
-.obra{border:1px solid var(--linha);border-radius:4px;overflow:hidden;
+.filtro-obras{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
+.filtro{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:100px;
+  border:1px solid var(--linha);background:transparent;color:#B4AFC4;cursor:pointer;
+  font-family:"Archivo",sans-serif;font-variation-settings:'wdth' 106,'wght' 700;
+  font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;
+  transition:border-color .18s ease,background .18s ease,color .18s ease}
+.filtro .qtd{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:0;
+  color:inherit;opacity:.6;padding:1px 6px;border-radius:100px;background:rgba(255,255,255,.08)}
+.filtro:hover{border-color:var(--quartzo);color:var(--calcario)}
+.filtro.on{background:var(--grad);border-color:transparent;color:#fff}
+.filtro.on .qtd{background:rgba(255,255,255,.22)}
+.filtro:focus-visible{outline:2px solid var(--quartzo);outline-offset:2px}
+
+.obras{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:760px){.obras{grid-template-columns:1fr}}
+
+.obra{border:1px solid var(--linha);border-radius:6px;overflow:hidden;
   background:var(--obsidiana-2);text-decoration:none;display:block;
-  transform-style:preserve-3d;
-  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
-.obra:hover{transform:translateY(-4px);border-color:rgba(201,169,255,.32);
-  box-shadow:0 22px 46px -22px rgba(123,63,228,.55)}
+  transform-style:preserve-3d}
+.obra:hover{transform:translateY(-5px);border-color:rgba(201,169,255,.34);
+  box-shadow:0 26px 54px -24px rgba(123,63,228,.6)}
 .obra:focus-visible{outline:2px solid var(--quartzo);outline-offset:3px}
-.obra .tela{height:196px;position:relative;overflow:hidden;background:#07070d}
+.obra.saindo{opacity:0;transform:scale(.96);pointer-events:none}
+/* especificidade maior que .rv de propósito: garante que opacidade/transform
+   do card (revelação e filtro) e as transições de hover não se pisem */
+.obra.rv{transition:opacity .45s ease,transform .45s ease,border-color .2s ease,box-shadow .2s ease}
+
+.obra-chrome{display:flex;align-items:center;gap:14px;padding:12px 16px;
+  background:var(--obsidiana-3);border-bottom:1px solid var(--linha)}
+.obra-pontos{display:flex;gap:5px;flex:none}
+.obra-pontos span{width:7px;height:7px;border-radius:50%;background:rgba(242,240,247,.18)}
+.obra-endereco{flex:1;display:flex;align-items:center;gap:9px;min-width:0;padding:6px 12px;
+  border-radius:100px;background:var(--obsidiana);border:1px solid var(--linha);
+  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.01em;color:var(--grafite);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transition:border-color .2s ease,color .2s ease}
+.obra:hover .obra-endereco{border-color:rgba(201,169,255,.3);color:#B4AFC4}
+.obra-endereco .ao-vivo{width:7px;height:7px;border-radius:50%;background:#3ED598;flex:none;
+  box-shadow:0 0 0 0 rgba(62,213,152,.7);animation:pulso 2.2s infinite}
+@keyframes pulso{0%{box-shadow:0 0 0 0 rgba(62,213,152,.6)}
+  70%{box-shadow:0 0 0 7px rgba(62,213,152,0)}100%{box-shadow:0 0 0 0 rgba(62,213,152,0)}}
+
+.obra .tela{height:260px;position:relative;overflow:hidden;background:#07070d}
 .obra .tela img{width:100%;height:100%;object-fit:cover;object-position:top center;
   display:block;transition:transform .5s ease}
 .obra:hover .tela img{transform:scale(1.045)}
 .obra .tela::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(to top,var(--obsidiana-2),transparent 58%)}
-.obra .corpo{padding:24px}
+  background:linear-gradient(to top,var(--obsidiana-2),transparent 62%)}
+.obra .corpo{padding:26px}
 .obra .cat{margin-bottom:10px}
-.obra h3{font-size:18px;margin-bottom:9px}
+.obra h3{font-size:19px;margin-bottom:9px}
 .obra p{font-size:14px;color:#A9A4BA;margin:0}
-.obra .selo{position:absolute;top:12px;right:12px;z-index:2;display:flex;align-items:center;gap:6px;
-  padding:6px 11px;border-radius:100px;background:rgba(10,10,18,.78);backdrop-filter:blur(8px);
-  border:1px solid rgba(201,169,255,.28);
-  font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--quartzo)}
-.obra .selo .pulso{width:6px;height:6px;border-radius:50%;background:#3ED598;flex:none;
-  box-shadow:0 0 0 0 rgba(62,213,152,.7);animation:pulso 2.2s infinite}
-@keyframes pulso{0%{box-shadow:0 0 0 0 rgba(62,213,152,.6)}
-  70%{box-shadow:0 0 0 7px rgba(62,213,152,0)}100%{box-shadow:0 0 0 0 rgba(62,213,152,0)}}
 .obra .link{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:20px;
   padding:12px 16px;border-radius:3px;border:1px solid var(--linha);
   background:rgba(123,63,228,.09);
@@ -284,10 +309,10 @@ section{padding:100px 0;position:relative}
 .obra:hover .link{background:var(--grad);border-color:transparent;color:#fff}
 .obra .link .seta{transition:transform .2s ease;font-size:15px}
 .obra:hover .link .seta{transform:translateX(4px)}
-.obra .dom{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.06em;
-  text-transform:none;color:var(--grafite);margin-top:10px;display:block;
-  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.obra:hover .dom{color:#A9A4BA}
+@media(max-width:480px){
+  .obra-endereco{font-size:10px}
+  .obra .tela{height:210px}
+}
 
 /* ---------- seletor de plano ---------- */
 .seletor{background:var(--obsidiana-2);border:1px solid var(--linha);border-radius:6px;
@@ -429,9 +454,9 @@ footer .base-legal{display:flex;gap:18px;flex-wrap:wrap}
 /* ---------- reveal ---------- */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .rv.on{opacity:1;transform:none}
-.g3>.rv:nth-child(2),.g5>.rv:nth-child(2),.principios>.rv:nth-child(2){transition-delay:.09s}
-.g3>.rv:nth-child(3),.g5>.rv:nth-child(3),.principios>.rv:nth-child(3){transition-delay:.18s}
-.g5>.rv:nth-child(4),.principios>.rv:nth-child(4){transition-delay:.27s}
+.g3>.rv:nth-child(2),.g5>.rv:nth-child(2),.obras>.rv:nth-child(2),.principios>.rv:nth-child(2){transition-delay:.09s}
+.g3>.rv:nth-child(3),.g5>.rv:nth-child(3),.obras>.rv:nth-child(3),.principios>.rv:nth-child(3){transition-delay:.18s}
+.g5>.rv:nth-child(4),.obras>.rv:nth-child(4),.principios>.rv:nth-child(4){transition-delay:.27s}
 .g5>.rv:nth-child(5){transition-delay:.36s}
 
 /* ---------- interações (tilt / magnético) ---------- */
