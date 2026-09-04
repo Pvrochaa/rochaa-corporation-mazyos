@@ -262,57 +262,54 @@ section{padding:100px 0;position:relative}
 .filtro.on .qtd{background:rgba(255,255,255,.22)}
 .filtro:focus-visible{outline:2px solid var(--quartzo);outline-offset:2px}
 
-.obras{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-@media(max-width:760px){.obras{grid-template-columns:1fr}}
+.obras{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:900px){.obras{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.obras{grid-template-columns:1fr}}
 
 .obra{border:1px solid var(--linha);border-radius:6px;overflow:hidden;
   background:var(--obsidiana-2);text-decoration:none;display:block;
   transform-style:preserve-3d}
-.obra:hover{transform:translateY(-5px);border-color:rgba(201,169,255,.34);
-  box-shadow:0 26px 54px -24px rgba(123,63,228,.6)}
+.obra:hover{transform:translateY(-4px);border-color:rgba(201,169,255,.34);
+  box-shadow:0 20px 42px -20px rgba(123,63,228,.6)}
 .obra:focus-visible{outline:2px solid var(--quartzo);outline-offset:3px}
-.obra.saindo{opacity:0;transform:scale(.96);pointer-events:none}
-/* especificidade maior que .rv de propósito: garante que opacidade/transform
-   do card (revelação e filtro) e as transições de hover não se pisem */
+.obra[hidden]{display:none}
+/* especificidade maior que .rv de propósito: garante que a transição de
+   hover (borda/sombra) não seja sobrescrita pela regra .rv, declarada depois */
 .obra.rv{transition:opacity .45s ease,transform .45s ease,border-color .2s ease,box-shadow .2s ease}
 
-.obra-chrome{display:flex;align-items:center;gap:14px;padding:12px 16px;
+.obra-chrome{display:flex;align-items:center;gap:10px;padding:9px 12px;
   background:var(--obsidiana-3);border-bottom:1px solid var(--linha)}
-.obra-pontos{display:flex;gap:5px;flex:none}
-.obra-pontos span{width:7px;height:7px;border-radius:50%;background:rgba(242,240,247,.18)}
-.obra-endereco{flex:1;display:flex;align-items:center;gap:9px;min-width:0;padding:6px 12px;
+.obra-pontos{display:flex;gap:4px;flex:none}
+.obra-pontos span{width:6px;height:6px;border-radius:50%;background:rgba(242,240,247,.18)}
+.obra-endereco{flex:1;display:flex;align-items:center;gap:7px;min-width:0;padding:4px 10px;
   border-radius:100px;background:var(--obsidiana);border:1px solid var(--linha);
-  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.01em;color:var(--grafite);
+  font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.01em;color:var(--grafite);
   overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transition:border-color .2s ease,color .2s ease}
 .obra:hover .obra-endereco{border-color:rgba(201,169,255,.3);color:#B4AFC4}
-.obra-endereco .ao-vivo{width:7px;height:7px;border-radius:50%;background:#3ED598;flex:none;
+.obra-endereco .ao-vivo{width:6px;height:6px;border-radius:50%;background:#3ED598;flex:none;
   box-shadow:0 0 0 0 rgba(62,213,152,.7);animation:pulso 2.2s infinite}
 @keyframes pulso{0%{box-shadow:0 0 0 0 rgba(62,213,152,.6)}
   70%{box-shadow:0 0 0 7px rgba(62,213,152,0)}100%{box-shadow:0 0 0 0 rgba(62,213,152,0)}}
 
-.obra .tela{height:260px;position:relative;overflow:hidden;background:#07070d}
+.obra .tela{height:168px;position:relative;overflow:hidden;background:#07070d}
 .obra .tela img{width:100%;height:100%;object-fit:cover;object-position:top center;
   display:block;transition:transform .5s ease}
 .obra:hover .tela img{transform:scale(1.045)}
 .obra .tela::after{content:"";position:absolute;inset:0;
   background:linear-gradient(to top,var(--obsidiana-2),transparent 62%)}
-.obra .corpo{padding:26px}
-.obra .cat{margin-bottom:10px}
-.obra h3{font-size:19px;margin-bottom:9px}
-.obra p{font-size:14px;color:#A9A4BA;margin:0}
-.obra .link{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:20px;
-  padding:12px 16px;border-radius:3px;border:1px solid var(--linha);
+.obra .corpo{padding:18px}
+.obra .cat{margin-bottom:8px}
+.obra h3{font-size:16px;margin-bottom:7px}
+.obra p{font-size:13px;color:#A9A4BA;margin:0}
+.obra .link{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;
+  padding:10px 14px;border-radius:3px;border:1px solid var(--linha);
   background:rgba(123,63,228,.09);
   font-family:"Archivo",sans-serif;font-variation-settings:'wdth' 106,'wght' 700;
-  font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--quartzo);
+  font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--quartzo);
   transition:background .2s ease,border-color .2s ease,color .2s ease}
 .obra:hover .link{background:var(--grad);border-color:transparent;color:#fff}
-.obra .link .seta{transition:transform .2s ease;font-size:15px}
+.obra .link .seta{transition:transform .2s ease;font-size:14px}
 .obra:hover .link .seta{transform:translateX(4px)}
-@media(max-width:480px){
-  .obra-endereco{font-size:10px}
-  .obra .tela{height:210px}
-}
 
 /* ---------- seletor de plano ---------- */
 .seletor{background:var(--obsidiana-2);border:1px solid var(--linha);border-radius:6px;

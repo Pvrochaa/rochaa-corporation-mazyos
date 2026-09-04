@@ -136,16 +136,7 @@ if (filtroObras) {
   const obras = document.querySelectorAll('.obra');
   const aplicarFiltro = (alvo) => {
     obras.forEach(o => {
-      const mostra = alvo === 'todos' || o.dataset.categoria === alvo;
-      if (mostra) {
-        o.hidden = false;
-        requestAnimationFrame(() => o.classList.remove('saindo'));
-      } else if (!o.hidden) {
-        o.classList.add('saindo');
-        const esconder = () => { o.hidden = true; };
-        o.addEventListener('transitionend', esconder, { once: true });
-        setTimeout(esconder, 480); // rede de segurança pra quem tem prefers-reduced-motion
-      }
+      o.hidden = !(alvo === 'todos' || o.dataset.categoria === alvo);
     });
   };
   filtroObras.querySelectorAll('.filtro').forEach(btn => {
