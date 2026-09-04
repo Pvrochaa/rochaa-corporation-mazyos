@@ -141,15 +141,12 @@ if (seletor) {
     site: { id: 'plano-site', nome: 'Site completo' },
     manutencao: { id: 'plano-manutencao', nome: 'Manutenção' },
     crm: { id: 'plano-crm-avulso', nome: 'CRM' },
-    crescimento: { id: 'plano-crescimento', nome: 'Crescimento' },
   };
 
   const calcular = () => {
-    if (respostas.crescer === 'sim') return mapa.crescimento;
-    // CRM avulso só faz sentido pra quem já tem site; sem site, o jeito de ter os dois juntos é o Crescimento
-    if (respostas.crm === 'sim') return respostas.site === 'sim' ? mapa.crm : mapa.crescimento;
-    if (respostas.site === 'sim') return mapa.manutencao;
-    return mapa.site;
+    if (respostas.site === 'nao') return mapa.site;
+    if (respostas.crm === 'sim') return mapa.crm;
+    return mapa.manutencao;
   };
 
   seletor.querySelectorAll('.pergunta').forEach(bloco => {
@@ -159,7 +156,7 @@ if (seletor) {
         respostas[chave] = btn.dataset.valor;
         bloco.querySelectorAll('button').forEach(b => b.classList.toggle('on', b === btn));
 
-        if (Object.keys(respostas).length < 3) return;
+        if (Object.keys(respostas).length < 2) return;
         const plano = calcular();
         resultadoNome.textContent = plano.nome;
         resultadoLink.href = '#' + plano.id;
