@@ -198,31 +198,9 @@ section{padding:100px 0;position:relative}
   display:grid;place-items:center;margin-bottom:20px;font-family:"JetBrains Mono",monospace;
   font-size:13px;font-weight:500;color:#fff}
 
-/* ---------- produto principal + complementares ---------- */
-.produto-principal{display:flex;align-items:center;gap:28px;padding:36px;margin-bottom:48px;
-  border-radius:8px;border:1px solid rgba(201,169,255,.32);background:rgba(123,63,228,.08);
-  text-decoration:none;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease}
-.produto-principal:hover{transform:translateY(-3px);border-color:var(--quartzo);
-  box-shadow:0 24px 50px -26px rgba(123,63,228,.55)}
-.produto-principal:focus-visible{outline:2px solid var(--quartzo);outline-offset:3px}
-.produto-principal .ic{width:52px;height:52px;border-radius:6px;background:var(--grad);
-  display:grid;place-items:center;flex:none;font-family:"JetBrains Mono",monospace;
-  font-size:15px;font-weight:500;color:#fff}
-.produto-principal-texto{flex:1;min-width:0}
-.produto-principal-texto .mono{color:var(--quartzo);margin-bottom:8px;display:block}
-.produto-principal-texto h3{font-size:24px;margin-bottom:8px}
-.produto-principal-texto p{margin:0;color:#B4AFC4;font-size:15px;max-width:52ch}
-.produto-principal-preco{flex:none;text-align:right}
-.produto-principal-preco .preco-tag{display:block;font-family:"JetBrains Mono",monospace;
-  font-size:11px;color:var(--grafite);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
-.produto-principal-preco strong{font-family:"Archivo",sans-serif;
-  font-variation-settings:'wdth' 112,'wght' 800;font-size:26px;color:var(--calcario)}
-@media(max-width:760px){
-  .produto-principal{flex-direction:column;align-items:flex-start;padding:28px}
-  .produto-principal-preco{text-align:left;margin-top:4px}
-}
-
-.servicos-complementares>.mono{display:block;margin-bottom:20px;text-align:center}
+/* ---------- serviços: principais + complementares ---------- */
+.servicos-principais{margin-bottom:48px}
+.servicos-principais>.mono,.servicos-complementares>.mono{display:block;margin-bottom:20px;text-align:center}
 .g5.g5-compacto>.card{flex:1 1 220px;max-width:250px}
 .card.compacto{padding:22px}
 .card.compacto .ic{width:32px;height:32px;font-size:11px;margin-bottom:14px}

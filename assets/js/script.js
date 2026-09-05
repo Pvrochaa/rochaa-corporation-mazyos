@@ -167,7 +167,7 @@ if (seletor) {
       'Ser encontrado no Google',
       'Receber clientes direto no WhatsApp',
     ]},
-    manutencao: { id: 'plano-manutencao', nome: 'Manutenção', preco: 'a partir de R$ 300/mês', prazo: 'Sem fidelidade — cancele quando quiser', beneficios: [
+    manutencao: { id: 'plano-manutencao', nome: 'Manutenção', preco: 'R$ 397/mês', prazo: 'Sem fidelidade — cancele quando quiser', beneficios: [
       'Manter o site que você já tem sempre atualizado',
       'Hospedagem, domínio e backup cobertos',
       'Suporte direto por WhatsApp',
