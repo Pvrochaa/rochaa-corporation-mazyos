@@ -133,7 +133,7 @@ if (temMouse && !parado) {
 // filtro de projetos por área
 const filtroObras = document.querySelector('.filtro-obras');
 if (filtroObras) {
-  const obras = document.querySelectorAll('.obra');
+  const obras = document.querySelectorAll('.obra-item');
   const aplicarFiltro = (alvo) => {
     obras.forEach(o => {
       o.hidden = !(alvo === 'todos' || o.dataset.categoria === alvo);
@@ -157,11 +157,26 @@ if (seletor) {
   const respostas = {};
   const resultado = document.getElementById('resultado');
   const resultadoNome = document.getElementById('resultadoNome');
+  const resultadoPreco = document.getElementById('resultadoPreco');
+  const resultadoBeneficios = document.getElementById('resultadoBeneficios');
+  const resultadoPrazo = document.getElementById('resultadoPrazo');
   const resultadoLink = document.getElementById('resultadoLink');
   const mapa = {
-    site: { id: 'plano-site', nome: 'Site completo' },
-    manutencao: { id: 'plano-manutencao', nome: 'Manutenção' },
-    crm: { id: 'plano-crm-avulso', nome: 'CRM' },
+    site: { id: 'plano-site', nome: 'Site completo', preco: 'a partir de R$ 1.500', prazo: 'Entrega em 7 dias', beneficios: [
+      'Apresentar seu negócio com profissionalismo',
+      'Ser encontrado no Google',
+      'Receber clientes direto no WhatsApp',
+    ]},
+    manutencao: { id: 'plano-manutencao', nome: 'Manutenção', preco: 'a partir de R$ 300/mês', prazo: 'Sem fidelidade — cancele quando quiser', beneficios: [
+      'Manter o site que você já tem sempre atualizado',
+      'Hospedagem, domínio e backup cobertos',
+      'Suporte direto por WhatsApp',
+    ]},
+    crm: { id: 'plano-crm-avulso', nome: 'CRM', preco: 'a combinar', prazo: 'Entrega em até 10 semanas', beneficios: [
+      'Organizar clientes, agenda e histórico num só lugar',
+      'Parar de controlar tudo por planilha ou caderno',
+      'Painel próprio, acessível de qualquer lugar',
+    ]},
   };
 
   const calcular = () => {
@@ -180,6 +195,9 @@ if (seletor) {
         if (Object.keys(respostas).length < 2) return;
         const plano = calcular();
         resultadoNome.textContent = plano.nome;
+        resultadoPreco.textContent = plano.preco;
+        resultadoBeneficios.innerHTML = plano.beneficios.map(b => `<li>${b}</li>`).join('');
+        resultadoPrazo.textContent = plano.prazo;
         resultadoLink.href = '#' + plano.id;
         resultado.hidden = false;
 
@@ -204,9 +222,9 @@ document.querySelectorAll('.entrega-item.et-acc summary .btn').forEach(btn => {
 });
 
 // faq e planos com painel expansível, abertura suave
-document.querySelectorAll('.faq details, .entrega-item.et-acc').forEach(det => {
+document.querySelectorAll('.faq details, .entrega-item.et-acc, .obra-case').forEach(det => {
   const summary = det.querySelector('summary');
-  const painel = det.querySelector('.resposta, .et-detalhe');
+  const painel = det.querySelector('.resposta, .et-detalhe, .obra-case-conteudo');
   if (!summary || !painel) return;
   if (parado) return; // deixa o navegador abrir/fechar na hora, sem animação
   summary.addEventListener('click', (e) => {
