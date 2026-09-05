@@ -454,6 +454,7 @@ footer .base-legal{display:flex;gap:18px;flex-wrap:wrap}
 .g3>.rv:nth-child(2),.g5>.rv:nth-child(2),.obras>.rv:nth-child(2),.principios>.rv:nth-child(2){transition-delay:.09s}
 .g3>.rv:nth-child(3),.g5>.rv:nth-child(3),.obras>.rv:nth-child(3),.principios>.rv:nth-child(3){transition-delay:.18s}
 .g5>.rv:nth-child(4),.obras>.rv:nth-child(4),.principios>.rv:nth-child(4){transition-delay:.27s}
+.obras>.rv:nth-child(5){transition-delay:.36s}
 .g5>.rv:nth-child(5){transition-delay:.36s}
 
 /* ---------- interações (tilt / magnético) ---------- */
