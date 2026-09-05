@@ -86,6 +86,7 @@ if (temMouse && !parado) {
   const hero = document.getElementById('hero');
   const orbe1 = document.querySelector('.orbe-1');
   const orbe2 = document.querySelector('.orbe-2');
+  const stage = document.getElementById('stage');
   if (hero && orbe1 && orbe2) {
     let tx = 0, ty = 0, cx = 0, cy = 0;
     hero.addEventListener('mousemove', (e) => {
@@ -98,6 +99,10 @@ if (temMouse && !parado) {
       cy += (ty - cy) * .06;
       orbe1.style.transform = `translate3d(${cx * 50}px, ${cy * 50}px, 0)`;
       orbe2.style.transform = `translate3d(${cx * -36}px, ${cy * -36}px, 0)`;
+      if (stage) {
+        stage.style.setProperty('--ry', (-6 + cx * 10).toFixed(2) + 'deg');
+        stage.style.setProperty('--rx', (6 - cy * 8).toFixed(2) + 'deg');
+      }
       requestAnimationFrame(laco);
     })();
   }
