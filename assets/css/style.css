@@ -226,36 +226,37 @@ section{padding:100px 0;position:relative}
 .faturamento.unico{border:1px solid var(--linha);color:var(--grafite)}
 .faturamento.mensal{background:rgba(123,63,228,.2);color:var(--quartzo)}
 
-/* ---------- pacote completo (oferta combinada) ---------- */
-.pacote{position:relative;overflow:hidden;margin-bottom:48px;padding:40px;border-radius:10px;
-  border:1px solid rgba(201,169,255,.36);
-  background:linear-gradient(160deg,rgba(123,63,228,.16),rgba(27,79,216,.08))}
-.pacote::before{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(60% 90% at 88% 0%,rgba(201,169,255,.18),transparent 70%)}
-.pacote-cabecalho{position:relative;max-width:60ch}
-.pacote-eyebrow{display:block;margin-bottom:10px;color:var(--quartzo)}
-.pacote h3{font-size:clamp(22px,3vw,29px);margin-bottom:12px}
-.pacote-cabecalho p{margin:0;color:#C6C1D4;font-size:15.5px;max-width:56ch}
-.pacote-precos{position:relative;display:flex;gap:44px;flex-wrap:wrap;margin:32px 0}
-.pacote-preco-item{display:flex;flex-direction:column;gap:9px}
-.pacote-preco-item strong{font-family:"Archivo",sans-serif;font-variation-settings:'wdth' 116,'wght' 850;
-  font-size:38px;color:var(--calcario);font-variant-numeric:tabular-nums;line-height:1}
-.pacote-preco-item strong small{font-family:"JetBrains Mono",monospace;font-size:14px;
-  font-weight:400;color:var(--grafite);margin-left:2px}
-.pacote-de{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--grafite)}
-.pacote-de s{color:var(--grafite)}
-.pacote-lista{position:relative;display:grid;grid-template-columns:repeat(2,1fr);gap:11px 28px;
-  margin:0 0 26px;padding:24px 0 0;border-top:1px solid var(--linha);list-style:none}
-.pacote-lista li{position:relative;padding-left:24px;font-size:14.5px;color:#C6C1D4}
-.pacote-lista li::before{content:"✓";position:absolute;left:0;color:var(--quartzo);font-weight:700}
-.pacote-manutencao{position:relative;display:flex;align-items:center;gap:12px;flex-wrap:wrap;
-  margin:0 0 28px;font-size:14px;color:#C6C1D4}
-.pacote-rodape{position:relative;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
-.pacote-obs{font-size:12.5px;color:var(--grafite);max-width:38ch}
-@media(max-width:640px){
-  .pacote{padding:26px}
-  .pacote-lista{grid-template-columns:1fr}
-}
+/* ---------- planos completos (pacotes tudo incluso) ---------- */
+.planos-completos{margin-bottom:52px}
+.planos-cab{max-width:64ch;margin-bottom:32px}
+.planos-eyebrow{display:block;margin-bottom:10px;color:var(--quartzo)}
+.planos-completos h3{font-size:clamp(22px,3vw,28px);margin-bottom:10px}
+.planos-cab p{margin:0;color:#C6C1D4;font-size:15.5px}
+.planos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
+.plano-card{position:relative;display:flex;flex-direction:column;height:100%;
+  border:1px solid var(--linha);border-radius:10px;padding:32px;background:var(--obsidiana-2)}
+.plano-card.destaque{border-color:rgba(201,169,255,.5);
+  background:linear-gradient(165deg,rgba(123,63,228,.18),rgba(27,79,216,.08));
+  box-shadow:0 30px 60px -30px rgba(123,63,228,.55)}
+.plano-badge{position:absolute;top:-13px;left:32px;padding:5px 14px;border-radius:100px;
+  background:var(--grad);color:#fff;font-family:"JetBrains Mono",monospace;font-size:9px;
+  letter-spacing:.1em;text-transform:uppercase}
+.plano-card h4{font-family:"Archivo",sans-serif;font-variation-settings:'wdth' 112,'wght' 800;
+  letter-spacing:-.02em;text-transform:uppercase;font-size:20px;margin:0 0 8px}
+.plano-desc{font-size:13.5px;color:var(--grafite);margin:0 0 22px;min-height:34px}
+.plano-preco{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px;margin-bottom:6px}
+.plano-preco strong{font-family:"Archivo",sans-serif;font-variation-settings:'wdth' 114,'wght' 850;
+  font-size:25px;color:var(--calcario);font-variant-numeric:tabular-nums;line-height:1}
+.plano-preco-label{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--grafite);
+  text-transform:uppercase;margin-right:6px}
+.plano-mais{color:var(--grafite);font-size:15px}
+.plano-card>.pacote-de{display:block;margin-bottom:22px}
+.plano-lista{list-style:none;margin:0 0 26px;padding:20px 0 0;border-top:1px solid var(--linha);flex:1}
+.plano-lista li{position:relative;padding:6px 0 6px 22px;font-size:13.5px;color:#C6C1D4}
+.plano-lista li::before{content:"✓";position:absolute;left:0;color:var(--quartzo);font-weight:700}
+.plano-card .btn{width:100%;justify-content:center}
+.pacote-obs{margin-top:26px;font-size:12.5px;color:var(--grafite);max-width:74ch}
+@media(max-width:960px){.planos-grid{grid-template-columns:1fr}}
 
 /* ---------- serviços: principais + complementares ---------- */
 .servicos-principais{margin-bottom:48px}
