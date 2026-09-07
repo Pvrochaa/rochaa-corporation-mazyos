@@ -495,6 +495,33 @@ section{padding:100px 0;position:relative}
 .et-detalhe .obs{margin:18px 0 0;font-size:12px;color:var(--grafite);
   border-top:1px solid var(--linha);padding-top:14px;line-height:1.5}
 .entregas-obs{margin-top:18px;font-size:13.5px;color:var(--grafite);line-height:1.6}
+
+/* ---------- condições (prazos e pagamento) ---------- */
+.condicoes{margin-top:48px}
+.condicoes>.mono{display:block;margin-bottom:10px}
+.condicoes h3{font-size:clamp(20px,2.6vw,26px);margin-bottom:22px}
+.condicoes h3 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;
+  background-clip:text;color:transparent}
+.condicoes-tabela-wrap{overflow-x:auto;border:1px solid var(--linha);border-radius:6px}
+.condicoes-tabela{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+.condicoes-tabela th,.condicoes-tabela td{padding:16px 20px;text-align:left;
+  border-bottom:1px solid var(--linha);vertical-align:top}
+.condicoes-tabela thead th{font-family:"JetBrains Mono",monospace;font-size:10px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--quartzo);background:var(--obsidiana-3)}
+.condicoes-tabela tbody td:first-child{font-family:"Archivo",sans-serif;
+  font-variation-settings:'wdth' 108,'wght' 750;color:var(--calcario);
+  white-space:nowrap;width:1%}
+.condicoes-tabela td:last-child{color:#B4AFC4}
+.condicoes-tabela tbody tr:last-child td{border-bottom:0}
+.condicoes-tabela tbody tr:hover{background:var(--obsidiana-3)}
+.condicoes-destaque{margin-top:24px;padding:22px 26px;border-radius:6px;
+  border-left:3px solid var(--ametista);background:rgba(123,63,228,.08);
+  font-size:14px;color:#C6C1D4}
+.condicoes-destaque strong{color:var(--calcario)}
+@media(max-width:640px){
+  .condicoes-tabela th,.condicoes-tabela td{padding:12px 14px;font-size:13px}
+  .condicoes-tabela tbody td:first-child{white-space:normal}
+}
 @media(max-width:640px){
   .entrega-item:not(.et-acc),.entrega-item.et-acc>summary{flex-wrap:wrap;row-gap:14px}
   .et-nome{flex-basis:100%}
