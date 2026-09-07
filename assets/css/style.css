@@ -203,13 +203,57 @@ section{padding:100px 0;position:relative}
 @media(max-width:480px){.g5>.card{flex-basis:100%;max-width:none}}
 
 .card{background:var(--obsidiana-2);border:1px solid var(--linha);border-radius:4px;padding:30px}
-.card h3{font-size:19px;margin-bottom:10px;font-variation-settings:'wdth' 108,'wght' 750}
-.card .preco-tag{display:block;font-family:"JetBrains Mono",monospace;font-size:12px;
-  letter-spacing:.04em;color:var(--quartzo);margin-bottom:12px}
+.card h3{font-size:19px;margin-bottom:14px;font-variation-settings:'wdth' 108,'wght' 750}
 .card p{color:#A9A4BA;font-size:15px;margin:0}
 .card .ic{width:38px;height:38px;border-radius:3px;background:var(--grad);
   display:grid;place-items:center;margin-bottom:20px;font-family:"JetBrains Mono",monospace;
   font-size:13px;font-weight:500;color:#fff}
+
+/* ---------- preço nos cards de serviço ---------- */
+.card .preco-bloco{display:flex;align-items:baseline;flex-wrap:wrap;column-gap:10px;row-gap:6px;
+  margin-bottom:16px}
+.card .preco-prefixo{flex-basis:100%;font-family:"JetBrains Mono",monospace;font-size:10px;
+  color:var(--grafite);text-transform:uppercase;letter-spacing:.06em}
+.card .preco-valor{font-family:"Archivo",sans-serif;font-variation-settings:'wdth' 116,'wght' 850;
+  font-size:32px;color:var(--calcario);font-variant-numeric:tabular-nums;line-height:1}
+.card .preco-sufixo{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--grafite)}
+.card.compacto .preco-valor{font-size:24px}
+
+/* ---------- selo de faturamento (único / mensal) ---------- */
+.faturamento{display:inline-flex;align-items:center;padding:3px 10px;border-radius:100px;
+  font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.09em;text-transform:uppercase;
+  white-space:nowrap}
+.faturamento.unico{border:1px solid var(--linha);color:var(--grafite)}
+.faturamento.mensal{background:rgba(123,63,228,.2);color:var(--quartzo)}
+
+/* ---------- pacote completo (oferta combinada) ---------- */
+.pacote{position:relative;overflow:hidden;margin-bottom:48px;padding:40px;border-radius:10px;
+  border:1px solid rgba(201,169,255,.36);
+  background:linear-gradient(160deg,rgba(123,63,228,.16),rgba(27,79,216,.08))}
+.pacote::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 90% at 88% 0%,rgba(201,169,255,.18),transparent 70%)}
+.pacote-cabecalho{position:relative;max-width:60ch}
+.pacote-eyebrow{display:block;margin-bottom:10px;color:var(--quartzo)}
+.pacote h3{font-size:clamp(22px,3vw,29px);margin-bottom:12px}
+.pacote-cabecalho p{margin:0;color:#C6C1D4;font-size:15.5px;max-width:56ch}
+.pacote-precos{position:relative;display:flex;gap:44px;flex-wrap:wrap;margin:32px 0}
+.pacote-preco-item{display:flex;flex-direction:column;gap:9px}
+.pacote-preco-item strong{font-family:"Archivo",sans-serif;font-variation-settings:'wdth' 116,'wght' 850;
+  font-size:38px;color:var(--calcario);font-variant-numeric:tabular-nums;line-height:1}
+.pacote-preco-item strong small{font-family:"JetBrains Mono",monospace;font-size:14px;
+  font-weight:400;color:var(--grafite);margin-left:2px}
+.pacote-de{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--grafite)}
+.pacote-de s{color:var(--grafite)}
+.pacote-lista{position:relative;display:grid;grid-template-columns:repeat(2,1fr);gap:11px 28px;
+  margin:0 0 34px;padding:24px 0 0;border-top:1px solid var(--linha);list-style:none}
+.pacote-lista li{position:relative;padding-left:24px;font-size:14.5px;color:#C6C1D4}
+.pacote-lista li::before{content:"✓";position:absolute;left:0;color:var(--quartzo);font-weight:700}
+.pacote-rodape{position:relative;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.pacote-obs{font-size:12.5px;color:var(--grafite);max-width:38ch}
+@media(max-width:640px){
+  .pacote{padding:26px}
+  .pacote-lista{grid-template-columns:1fr}
+}
 
 /* ---------- serviços: principais + complementares ---------- */
 .servicos-principais{margin-bottom:48px}
@@ -217,8 +261,7 @@ section{padding:100px 0;position:relative}
 .g5.g5-compacto>.card{flex:1 1 220px;max-width:250px}
 .card.compacto{padding:22px}
 .card.compacto .ic{width:32px;height:32px;font-size:11px;margin-bottom:14px}
-.card.compacto h3{font-size:16px;margin-bottom:8px}
-.card.compacto .preco-tag{font-size:11px;margin-bottom:8px}
+.card.compacto h3{font-size:16px;margin-bottom:12px}
 .card.compacto p{font-size:13.5px}
 
 /* ---------- quem somos ---------- */
@@ -277,7 +320,6 @@ section{padding:100px 0;position:relative}
   align-items:center;justify-content:center;text-align:center}
 .card.mini .ic{width:30px;height:30px;font-size:11px;margin-bottom:12px}
 .card.mini h3{font-size:14.5px;margin-bottom:6px}
-.card.mini .preco-tag{font-size:12px;margin-bottom:4px}
 .card.mini p{font-size:12px}
 .card.destaque{background:rgba(123,63,228,.1);border-color:rgba(201,169,255,.32)}
 
