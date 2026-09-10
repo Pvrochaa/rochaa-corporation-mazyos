@@ -162,17 +162,17 @@ if (seletor) {
   const resultadoPrazo = document.getElementById('resultadoPrazo');
   const resultadoLink = document.getElementById('resultadoLink');
   const mapa = {
-    site: { id: 'plano-site', nome: 'Site completo', preco: 'a partir de R$ 1.500', prazo: 'Entrega em 7 dias', beneficios: [
+    site: { id: 'plano-site', wa: 'https://wa.me/5521998632813?text=Oi%20Paulo!%20Vi%20o%20site%20da%20Rochaa%20e%20quero%20o%20Site%20completo.', nome: 'Site completo', preco: 'a partir de R$ 1.500', prazo: 'Entrega em 7 dias', beneficios: [
       'Apresentar seu negócio com profissionalismo',
       'Ser encontrado no Google',
       'Receber clientes direto no WhatsApp',
     ]},
-    manutencao: { id: 'plano-manutencao', nome: 'Manutenção', preco: 'R$ 300/mês', prazo: 'Sem fidelidade — cancele quando quiser', beneficios: [
+    manutencao: { id: 'plano-manutencao', wa: 'https://wa.me/5521998632813?text=Oi%20Paulo!%20Vi%20o%20site%20da%20Rochaa%20e%20quero%20tirar%20uma%20d%C3%BAvida%20sobre%20o%20plano%20de%20Manuten%C3%A7%C3%A3o.', nome: 'Manutenção', preco: 'R$ 300/mês', prazo: 'Sem fidelidade — cancele quando quiser', beneficios: [
       'Manter o site que você já tem sempre atualizado',
       'Hospedagem, domínio e backup cobertos',
       'Suporte direto por WhatsApp',
     ]},
-    crm: { id: 'plano-crm-avulso', nome: 'CRM', preco: 'a combinar', prazo: 'Entrega em até 10 semanas', beneficios: [
+    crm: { id: 'plano-crm-avulso', wa: 'https://wa.me/5521998632813?text=Oi%20Paulo!%20Vi%20o%20site%20da%20Rochaa%20e%20quero%20saber%20mais%20sobre%20o%20CRM.', nome: 'CRM', preco: 'a combinar', prazo: 'Entrega em até 10 semanas', beneficios: [
       'Organizar clientes, agenda e histórico num só lugar',
       'Parar de controlar tudo por planilha ou caderno',
       'Painel próprio, acessível de qualquer lugar',
@@ -198,7 +198,7 @@ if (seletor) {
         resultadoPreco.textContent = plano.preco;
         resultadoBeneficios.innerHTML = plano.beneficios.map(b => `<li>${b}</li>`).join('');
         resultadoPrazo.textContent = plano.prazo;
-        resultadoLink.href = '#' + plano.id;
+        resultadoLink.href = plano.wa;
         resultado.hidden = false;
 
         document.querySelectorAll('.recomendado').forEach(p => p.classList.remove('recomendado'));
@@ -206,13 +206,6 @@ if (seletor) {
         if (alvo) alvo.classList.add('recomendado');
       });
     });
-  });
-
-  resultadoLink && resultadoLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    const plano = calcular();
-    const alvo = document.getElementById(plano.id);
-    if (alvo) alvo.scrollIntoView({behavior: parado ? 'auto' : 'smooth', block: 'center'});
   });
 }
 
