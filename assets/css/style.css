@@ -65,12 +65,11 @@ header{
 }
 header.scrolled{border-bottom-color:var(--linha)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
-.marca{display:flex;align-items:center;gap:12px;text-decoration:none}
-.marca img{display:block;width:auto}
-.marca-r{width:auto;height:46px}
-.marca-nome{width:auto;height:30px}
-.marca-rodape{margin-bottom:18px}
-.marca-rodape img{width:170px;height:auto}
+.marca{display:flex;align-items:center;gap:13px;text-decoration:none}
+.marca svg{width:36px;height:36px;flex:none}
+.marca .n{font-family:var(--tit);font-weight:600;font-size:1.05rem;letter-spacing:-.01em;line-height:1.1;display:block}
+.marca .d{font-family:var(--txt);font-size:.6rem;font-weight:500;letter-spacing:.2em;
+  color:var(--cinza-3);text-transform:uppercase;display:block;margin-top:5px}
 nav{display:flex;gap:28px;align-items:center}
 .nav-links{display:flex;gap:28px;align-items:center}
 nav a{font-size:.92rem;font-weight:500;text-decoration:none;color:var(--cinza);transition:color .18s}
@@ -168,8 +167,6 @@ nav .btn{padding:11px 20px;font-size:.88rem}
 }
 @media(max-width:420px){
   nav{gap:14px}
-  .marca-nome{display:none}
-  .marca-r{height:40px}
   nav .btn{padding:11px 16px;font-size:.8rem}
   .txt-full{display:none}
   .txt-curto{display:inline}
