@@ -72,8 +72,8 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;gap:2
   color:var(--cinza-3);text-transform:uppercase;display:block;margin-top:5px}
 nav{display:flex;gap:28px;align-items:center}
 .nav-links{display:flex;gap:28px;align-items:center}
-nav a{font-size:.92rem;font-weight:500;text-decoration:none;color:var(--cinza);transition:color .18s}
-nav a:hover{color:var(--branco)}
+nav a:not(.btn){font-size:.92rem;font-weight:500;text-decoration:none;color:var(--cinza);transition:color .18s}
+nav a:not(.btn):hover{color:var(--branco)}
 nav .btn{padding:11px 20px;font-size:.88rem}
 
 .hamb{display:none;flex-direction:column;justify-content:center;gap:5px;
@@ -495,3 +495,26 @@ footer .base-legal{display:flex;gap:18px;flex-wrap:wrap}
   .wa-flutuante{right:14px;bottom:14px;padding:12px 16px 12px 12px;font-size:.84rem}
 }
 @media(prefers-reduced-motion:reduce){.wa-flutuante:hover{transform:none}}
+
+/* ---------- faixa de clientes (hero) ---------- */
+.hero .wrap.faixa-wrap{display:block;margin-top:clamp(44px,6vw,72px)}
+.faixa{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding-top:22px;border-top:1px solid var(--linha)}
+.faixa-rotulo{font-size:.66rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cinza-3);margin-right:8px}
+.faixa a{font-size:.84rem;color:var(--cinza-2);text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--linha);
+  transition:color .18s,border-color .18s,background .18s}
+.faixa a:hover{color:var(--branco);border-color:var(--linha-2);background:rgba(255,255,255,.04)}
+.faixa .faixa-mais{border-color:transparent;color:var(--cinza);font-weight:500}
+.faixa .faixa-mais:hover{background:transparent;color:var(--branco)}
+@media(max-width:640px){.faixa-rotulo{width:100%;margin:0 0 4px}}
+
+/* ---------- investimento: oferta + garantias ---------- */
+.bloco-oferta .oferta{margin-top:0}
+.garantias{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:820px){.garantias{grid-template-columns:1fr}}
+.garantias li{padding:18px 20px 18px 44px;border:1px solid var(--linha);border-radius:18px;background:var(--carvao);position:relative}
+.garantias li::before{content:"";position:absolute;left:20px;top:25px;width:11px;height:6px;
+  border-left:1.8px solid var(--branco);border-bottom:1.8px solid var(--branco);transform:rotate(-45deg)}
+.garantias b{font-family:var(--tit);font-weight:600;font-size:.98rem;display:block;margin-bottom:4px}
+.garantias span{font-size:.84rem;color:var(--cinza-2);line-height:1.5;display:block}
+#investimento .condicoes{margin-top:24px}
+#investimento .cab p b{color:var(--branco);font-weight:600}
