@@ -102,7 +102,7 @@ nav .btn{padding:11px 20px;font-size:.88rem}
 .corte{height:1px;background:var(--linha);border:0;margin:0;position:relative;z-index:1}
 
 /* ---------- hero ---------- */
-.hero{padding:180px 0 110px;position:relative;overflow:hidden}
+.hero{padding:150px 0 70px;position:relative;overflow:hidden}
 .hero::before{
   content:"";position:absolute;top:-260px;left:50%;transform:translateX(-50%);
   width:min(1100px,130vw);height:600px;pointer-events:none;z-index:0;
@@ -157,7 +157,7 @@ nav .btn{padding:11px 20px;font-size:.88rem}
 .busca .rodape{margin-top:14px;font-size:11px;color:#70757a;font-style:italic}
 
 @media(max-width:900px){
-  .hero{padding:140px 0 76px}
+  .hero{padding:120px 0 56px}
   .hero .wrap{grid-template-columns:1fr;gap:44px}
 }
 .txt-curto{display:none}
@@ -173,9 +173,9 @@ nav .btn{padding:11px 20px;font-size:.88rem}
 }
 
 /* ---------- seções ---------- */
-section{padding:100px 0;position:relative}
-@media(max-width:640px){section{padding:64px 0}}
-.cab{margin-bottom:48px;max-width:60ch}
+section{padding:72px 0;position:relative}
+@media(max-width:640px){section{padding:52px 0}}
+.cab{margin-bottom:32px;max-width:60ch}
 .cab .num{font-family:var(--txt);font-size:.7rem;font-weight:600;letter-spacing:.22em;
   text-transform:uppercase;color:var(--cinza-3);display:flex;align-items:center;gap:14px;margin-bottom:22px}
 .cab .num::after{content:"";flex:1;height:1px;background:var(--linha);min-width:40px}
@@ -186,7 +186,7 @@ section{padding:100px 0;position:relative}
 @media(max-width:900px){.g3{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.g3{grid-template-columns:1fr}}
 
-.cta-meio{margin-top:28px;padding:28px 32px;border-radius:22px;
+.cta-meio{margin-top:24px;padding:28px 32px;border-radius:22px;
   border:1px solid var(--linha-2);background:linear-gradient(180deg,var(--carvao-2),var(--carvao));
   display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .cta-meio p{margin:0;font-size:1.08rem;color:var(--branco);max-width:46ch;
@@ -208,7 +208,7 @@ section{padding:100px 0;position:relative}
 .rotulo{font-family:var(--txt);font-size:.7rem;font-weight:600;letter-spacing:.22em;
   text-transform:uppercase;color:var(--cinza-3);display:flex;align-items:center;gap:14px;margin:0}
 .rotulo::after{content:"";flex:1;height:1px;background:var(--linha)}
-.bloco{margin-top:clamp(48px,6vw,72px)}
+.bloco{margin-top:clamp(36px,5vw,48px)}
 
 /* ---------- a operação: 3 passos ---------- */
 .passos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
@@ -220,74 +220,24 @@ section{padding:100px 0;position:relative}
 .passos>.rv:nth-child(2){transition-delay:.09s}
 .passos>.rv:nth-child(3){transition-delay:.18s}
 
-/* ---------- quadro de entregas ---------- */
-.quadro{margin-top:24px;border:1px solid var(--linha);border-radius:24px;overflow:hidden;background:var(--carvao)}
-.linha{display:grid;grid-template-columns:auto 1fr auto;gap:8px 18px;padding:20px clamp(20px,3vw,30px);
-  border-bottom:1px solid var(--linha);align-items:baseline}
-.linha:last-of-type{border-bottom:0}
-.linha .n{font-size:.72rem;font-weight:600;color:var(--cinza-3);letter-spacing:.1em}
-.linha b{font-family:var(--tit);font-weight:600;font-size:1.06rem;letter-spacing:-.01em;display:block}
-.linha span{font-size:.88rem;color:var(--cinza-2);display:block;margin-top:4px;line-height:1.5}
-.linha .pr{font-family:var(--tit);font-weight:500;font-size:1rem;color:var(--cinza);white-space:nowrap;text-align:right;margin:0}
-.linha.ia{background:var(--carvao-2);box-shadow:inset 3px 0 0 var(--branco)}
-.linha.ia b{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .tag-ia{font-family:var(--txt);font-style:normal;font-size:.62rem;font-weight:700;letter-spacing:.12em;
   text-transform:uppercase;color:var(--preto);background:var(--branco);padding:3px 9px;border-radius:999px;
   display:inline-block;margin:0}
-@media(max-width:620px){
-  .linha{grid-template-columns:auto 1fr}
-  .linha .pr{grid-column:2;text-align:left;margin-top:8px;color:var(--cinza-2)}
-}
-
 /* ---------- oferta (desconto + pagamento) ---------- */
-.oferta{margin-top:20px;border:1px solid var(--linha-2);border-radius:26px;overflow:hidden;
-  background:linear-gradient(180deg,var(--carvao-2),var(--carvao))}
-.oferta-topo{padding:clamp(28px,4vw,42px);display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}
-@media(max-width:720px){.oferta-topo{grid-template-columns:1fr;gap:22px}}
 .selo-desc{display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;
   background:var(--branco);color:var(--preto);font-family:var(--tit);font-weight:700;font-size:.82rem;letter-spacing:.02em}
 .de{margin:18px 0 0;font-size:1rem;color:var(--cinza-3)}
 .de s{text-decoration-thickness:1.5px;text-decoration-color:var(--cinza-3)}
-.por{font-family:var(--tit);font-weight:700;font-size:clamp(3.1rem,8vw,4.7rem);line-height:.95;
+.por{font-family:var(--tit);font-weight:700;font-size:clamp(2.8rem,7vw,4rem);line-height:.95;
   letter-spacing:-.04em;display:block;margin-top:6px}
 .por sup{font-size:.32em;vertical-align:.95em;color:var(--cinza-2);margin-right:.14em;font-weight:600}
 .economia{font-size:.95rem;color:var(--cinza);margin:14px 0 0}
 .economia b{color:var(--branco);font-weight:600}
-.oferta-lado{text-align:right}
-.oferta-lado .mono{display:block}
-.oferta-lado strong{display:block;font-family:var(--tit);font-weight:600;font-size:1.5rem;margin-top:8px;line-height:1.2;letter-spacing:-.02em}
-@media(max-width:720px){.oferta-lado{text-align:left}}
-.formas{border-top:1px solid var(--linha);padding:20px clamp(28px,4vw,42px);display:flex;flex-wrap:wrap;gap:12px}
-.formas .tit{font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--cinza-3);width:100%;margin-bottom:4px}
 .selo{display:inline-flex;align-items:center;gap:14px;padding:14px 24px 14px 18px;border:1px solid var(--linha-2);
   border-radius:999px;background:rgba(255,255,255,.05)}
 .selo img{width:34px;height:34px;object-fit:contain;flex:none;display:block}
 .selo b{font-family:var(--tit);font-size:1.12rem;font-weight:700;display:block;letter-spacing:-.01em}
 .selo span span{font-size:.78rem;color:var(--cinza-2);display:block;margin-top:3px}
-
-/* ---------- operação mensal ---------- */
-.mensal{margin-top:24px;border:1px solid var(--linha);border-radius:24px;background:var(--carvao);overflow:hidden}
-.mensal-topo{padding:clamp(26px,4vw,36px);display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;
-  border-bottom:1px solid var(--linha)}
-@media(max-width:720px){.mensal-topo{grid-template-columns:1fr;gap:18px}}
-.mensal h3{font-size:1.35rem;margin-bottom:8px}
-.mensal-topo p{margin:0;font-size:.95rem;color:var(--cinza-2);max-width:52ch;line-height:1.6}
-.mensal-preco{text-align:right}
-.mensal-preco .por{font-size:clamp(2.4rem,6vw,3.4rem)}
-.mensal-preco small{display:block;font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--cinza-3);margin-top:8px}
-@media(max-width:720px){.mensal-preco{text-align:left}}
-.mensal-lista{list-style:none;margin:0;padding:22px clamp(26px,4vw,36px) 26px;display:grid;
-  grid-template-columns:1fr 1fr;gap:10px 28px}
-@media(max-width:720px){.mensal-lista{grid-template-columns:1fr}}
-.mensal-lista li{font-size:.9rem;color:var(--cinza);padding-left:22px;position:relative;line-height:1.5}
-.mensal-lista li::before{content:"";position:absolute;left:0;top:7px;width:10px;height:6px;
-  border-left:1.8px solid var(--branco);border-bottom:1.8px solid var(--branco);transform:rotate(-45deg)}
-.notas{margin:22px 0 0;font-size:.86rem;color:var(--cinza-3);line-height:1.8;max-width:72ch}
-
-.acao{margin-top:clamp(36px,5vw,48px);display:flex;flex-wrap:wrap;gap:18px;align-items:center}
-.acao-nota{font-size:.74rem;font-weight:600;letter-spacing:.1em;color:var(--cinza-3);text-transform:uppercase}
-.hero .prova div strong small{font-family:var(--txt);font-size:.85rem;font-weight:400;color:var(--cinza-2);letter-spacing:0}
 
 /* ---------- quem faz ---------- */
 .sobre{background:var(--carvao);position:relative;overflow:hidden}
@@ -383,28 +333,6 @@ section{padding:100px 0;position:relative}
 .obra .link .seta{transition:transform .2s ease;font-size:.95rem}
 .obra:hover .link .seta{transform:translateX(4px)}
 
-/* ---------- condições (prazos e pagamento) ---------- */
-.condicoes{margin-top:0}
-.condicoes-tabela-wrap{overflow-x:auto;border:1px solid var(--linha);border-radius:22px;background:var(--carvao)}
-.condicoes-tabela{width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px}
-.condicoes-tabela th,.condicoes-tabela td{padding:16px 22px;text-align:left;
-  border-bottom:1px solid var(--linha);vertical-align:top}
-.condicoes-tabela thead th{font-size:.64rem;font-weight:600;
-  letter-spacing:.18em;text-transform:uppercase;color:var(--cinza-3);background:var(--carvao-2)}
-.condicoes-tabela tbody td:first-child{font-family:var(--tit);font-weight:600;color:var(--branco);
-  white-space:nowrap;width:1%}
-.condicoes-tabela td:last-child{color:var(--cinza)}
-.condicoes-tabela tbody tr:last-child td{border-bottom:0}
-.condicoes-tabela tbody tr:hover{background:var(--carvao-2)}
-.condicoes-destaque{margin-top:20px;padding:22px 26px;border-radius:20px;
-  border:1px solid var(--linha-2);background:linear-gradient(180deg,var(--carvao-2),var(--carvao));
-  font-size:.92rem;color:var(--cinza);line-height:1.65}
-.condicoes-destaque strong{color:var(--branco);font-weight:600}
-@media(max-width:640px){
-  .condicoes-tabela th,.condicoes-tabela td{padding:12px 14px;font-size:.84rem}
-  .condicoes-tabela tbody td:first-child{white-space:normal}
-}
-
 /* ---------- faq ---------- */
 .faq{border-top:1px solid var(--linha)}
 .faq details{border-bottom:1px solid var(--linha)}
@@ -428,7 +356,7 @@ section{padding:100px 0;position:relative}
 .faq summary:focus-visible{outline:1.5px solid var(--branco);outline-offset:4px}
 
 /* ---------- cta final ---------- */
-.final{position:relative;overflow:hidden;text-align:center;padding:130px 0}
+.final{position:relative;overflow:hidden;text-align:center;padding:96px 0}
 @media(max-width:640px){.final{padding:80px 0}}
 .final::before{content:"";position:absolute;left:50%;bottom:-320px;transform:translateX(-50%);
   width:min(1100px,130vw);height:640px;pointer-events:none;
@@ -497,7 +425,7 @@ footer .base-legal{display:flex;gap:18px;flex-wrap:wrap}
 @media(prefers-reduced-motion:reduce){.wa-flutuante:hover{transform:none}}
 
 /* ---------- faixa de clientes (hero) ---------- */
-.hero .wrap.faixa-wrap{display:block;margin-top:clamp(44px,6vw,72px)}
+.hero .wrap.faixa-wrap{display:block;margin-top:clamp(36px,5vw,56px)}
 .faixa{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding-top:22px;border-top:1px solid var(--linha)}
 .faixa-rotulo{font-size:.66rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cinza-3);margin-right:8px}
 .faixa a{font-size:.84rem;color:var(--cinza-2);text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--linha);
@@ -507,14 +435,71 @@ footer .base-legal{display:flex;gap:18px;flex-wrap:wrap}
 .faixa .faixa-mais:hover{background:transparent;color:var(--branco)}
 @media(max-width:640px){.faixa-rotulo{width:100%;margin:0 0 4px}}
 
-/* ---------- investimento: oferta + garantias ---------- */
-.bloco-oferta .oferta{margin-top:0}
+
+/* ---------- pacote completo (preço + entregas) ---------- */
+.pacote{display:grid;grid-template-columns:.95fr 1.05fr;gap:14px;align-items:stretch}
+@media(max-width:900px){.pacote{grid-template-columns:1fr}}
+.pacote-preco{border:1px solid var(--linha-2);border-radius:26px;padding:clamp(24px,3.5vw,36px);
+  background:linear-gradient(180deg,var(--carvao-2),var(--carvao));display:flex;flex-direction:column}
+.pacote-preco .por{margin-top:4px}
+.pacote-meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:22px;padding-top:18px;border-top:1px solid var(--linha)}
+.pacote-meta .mono{display:block;margin-bottom:6px}
+.pacote-meta strong{font-family:var(--tit);font-weight:600;font-size:1.25rem;letter-spacing:-.02em}
+.pacote-meta strong small{font-family:var(--txt);font-size:.8rem;font-weight:400;color:var(--cinza-2)}
+.pacote-preco .formas{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.pacote-preco .selo{padding:10px 18px 10px 12px;gap:10px}
+.pacote-preco .selo img{width:28px;height:28px}
+.pacote-preco .selo b{font-size:.95rem}
+.pacote-preco .selo span span{font-size:.72rem;margin-top:2px}
+.pacote-preco .btn{margin-top:auto;width:100%;padding-top:18px;padding-bottom:18px}
+.pacote-preco .acao-nota{display:block;text-align:center;margin-top:12px}
+.pacote-lista{border:1px solid var(--linha);border-radius:26px;background:var(--carvao);padding:clamp(20px,3vw,28px);display:flex;flex-direction:column}
+.pacote-lista .rotulo{margin-bottom:6px}
+.entregas{list-style:none;margin:0;padding:0}
+.entregas li{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start;padding:14px 0;border-bottom:1px solid var(--linha)}
+.entregas li:last-child{border-bottom:0;padding-bottom:0}
+.entregas li b{font-family:var(--tit);font-weight:600;font-size:.98rem;letter-spacing:-.01em;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.entregas li span{display:block;font-size:.82rem;color:var(--cinza-2);line-height:1.5;margin-top:3px}
+.entregas li span a{color:var(--cinza);text-decoration:underline;text-underline-offset:3px}
+.entregas li span a:hover{color:var(--branco)}
+.entregas li>em{font-style:normal;font-family:var(--tit);font-weight:500;font-size:.92rem;color:var(--cinza);white-space:nowrap;padding-top:2px}
+.entregas li.ia{margin:4px -12px;padding:14px 12px;border-radius:16px;background:var(--carvao-2);box-shadow:inset 3px 0 0 var(--branco);border-bottom:0}
+.entregas li.ia + li{border-top:1px solid var(--linha)}
+@media(max-width:480px){.entregas li{grid-template-columns:1fr}.entregas li>em{padding-top:0;color:var(--cinza-2)}}
+
+/* ---------- operação mensal compacta ---------- */
+.mensal-compacta{margin-top:14px;border:1px solid var(--linha);border-radius:22px;background:var(--carvao);padding:clamp(20px,3vw,26px)}
+.mensal-cab p{margin:10px 0 0;font-size:.9rem;color:var(--cinza-2);max-width:70ch;line-height:1.55}
+.chips{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{font-size:.82rem;color:var(--cinza);padding:8px 14px 8px 30px;border-radius:999px;border:1px solid var(--linha);background:var(--preto);position:relative}
+.chips li::before{content:"";position:absolute;left:13px;top:13px;width:9px;height:5px;
+  border-left:1.6px solid var(--branco);border-bottom:1.6px solid var(--branco);transform:rotate(-45deg)}
+#pacote .garantias{margin-top:14px}
+#pacote .notas{margin-top:16px;font-size:.82rem}
+
+/* ---------- mazyos ---------- */
+.mazy{margin-top:14px;display:grid;grid-template-columns:1.1fr .9fr;gap:14px;align-items:stretch}
+@media(max-width:900px){.mazy{grid-template-columns:1fr}}
+.mazy-txt{border:1px solid var(--linha-2);border-radius:24px;padding:clamp(24px,3.5vw,34px);background:linear-gradient(180deg,var(--carvao-2),var(--carvao))}
+.mazy-txt h3{font-size:clamp(1.3rem,2.4vw,1.6rem);margin:14px 0 14px;letter-spacing:-.03em}
+.mazy-txt p{font-size:.95rem;color:var(--cinza);line-height:1.65;margin:0 0 12px}
+.mazy-txt p:last-child{margin-bottom:0}
+.mazy-txt p b{color:var(--branco);font-weight:600}
+.mazy-lista{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.mazy-lista li{display:grid;grid-template-columns:auto 1fr;gap:14px;padding:18px 20px;border:1px solid var(--linha);border-radius:18px;background:var(--carvao)}
+.mazy-lista .n{font-size:.68rem;font-weight:700;letter-spacing:.16em;color:var(--cinza-3);padding-top:5px}
+.mazy-lista b{font-family:var(--tit);font-weight:600;font-size:1rem;display:block;margin-bottom:4px}
+.mazy-lista span:not(.n){font-size:.86rem;color:var(--cinza-2);line-height:1.5;display:block}
+
+/* ---------- garantias ---------- */
 .garantias{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 @media(max-width:820px){.garantias{grid-template-columns:1fr}}
-.garantias li{padding:18px 20px 18px 44px;border:1px solid var(--linha);border-radius:18px;background:var(--carvao);position:relative}
-.garantias li::before{content:"";position:absolute;left:20px;top:25px;width:11px;height:6px;
+.garantias li{padding:16px 18px 16px 42px;border:1px solid var(--linha);border-radius:18px;background:var(--carvao);position:relative}
+.garantias li::before{content:"";position:absolute;left:18px;top:23px;width:11px;height:6px;
   border-left:1.8px solid var(--branco);border-bottom:1.8px solid var(--branco);transform:rotate(-45deg)}
-.garantias b{font-family:var(--tit);font-weight:600;font-size:.98rem;display:block;margin-bottom:4px}
-.garantias span{font-size:.84rem;color:var(--cinza-2);line-height:1.5;display:block}
-#investimento .condicoes{margin-top:24px}
-#investimento .cab p b{color:var(--branco);font-weight:600}
+.garantias b{font-family:var(--tit);font-weight:600;font-size:.95rem;display:block;margin-bottom:3px}
+.garantias span{font-size:.82rem;color:var(--cinza-2);line-height:1.5;display:block}
+
+/* ---------- notas e nota de ação ---------- */
+.notas{margin:22px 0 0;font-size:.86rem;color:var(--cinza-3);line-height:1.8;max-width:80ch}
+.acao-nota{font-size:.72rem;font-weight:600;letter-spacing:.1em;color:var(--cinza-3);text-transform:uppercase}
