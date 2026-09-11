@@ -423,13 +423,32 @@ footer .base-legal{display:flex;gap:18px;flex-wrap:wrap}
 /* ---------- faixa de clientes (hero) ---------- */
 .hero .wrap.faixa-wrap{display:block;margin-top:clamp(36px,5vw,56px)}
 .faixa{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding-top:22px;border-top:1px solid var(--linha)}
-.faixa-rotulo{font-size:.66rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cinza-3);margin-right:8px}
+.faixa-rotulo{font-size:.66rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cinza-3);margin-right:8px;flex:none}
 .faixa a{font-size:.84rem;color:var(--cinza-2);text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid var(--linha);
-  transition:color .18s,border-color .18s,background .18s}
+  transition:color .18s,border-color .18s,background .18s;white-space:nowrap}
 .faixa a:hover{color:var(--branco);border-color:var(--linha-2);background:rgba(255,255,255,.04)}
-.faixa .faixa-mais{border-color:transparent;color:var(--cinza);font-weight:500}
+.faixa .faixa-mais{border-color:transparent;color:var(--cinza);font-weight:500;flex:none}
 .faixa .faixa-mais:hover{background:transparent;color:var(--branco)}
-@media(max-width:640px){.faixa-rotulo{width:100%;margin:0 0 4px}}
+.faixa-marquee{flex:1 1 260px;min-width:0;overflow:hidden;
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 28px,#000 calc(100% - 28px),transparent);
+  mask-image:linear-gradient(to right,transparent,#000 28px,#000 calc(100% - 28px),transparent)}
+.faixa-track{display:flex;gap:10px;width:max-content;animation:faixa-rolar 26s linear infinite}
+.faixa-marquee:hover .faixa-track{animation-play-state:paused}
+@keyframes faixa-rolar{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:640px){
+  .faixa-rotulo{width:100%;margin:0 0 4px}
+  .faixa-marquee{flex-basis:100%;order:2}
+  .faixa-mais{order:3;margin-top:8px}
+}
+
+/* ---------- prova numérica ---------- */
+.provas{padding:clamp(28px,4vw,40px) 0}
+.provas-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px 20px}
+.prova-item strong{display:block;font-family:var(--tit);font-weight:600;font-size:clamp(1.7rem,3vw,2.1rem);
+  letter-spacing:-.03em;line-height:1}
+.prova-item span{display:block;font-size:.78rem;color:var(--cinza-2);margin-top:8px;line-height:1.4}
+@media(max-width:820px){.provas-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.provas-grid{grid-template-columns:1fr}}
 
 
 /* ---------- pacote completo (preço + entregas) ---------- */
