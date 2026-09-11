@@ -1,3 +1,16 @@
+// conversão do Google Ads: dispara ao clicar em qualquer link de WhatsApp
+document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
+  a.addEventListener('click', () => {
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18440321876/0dXaCOzuuvQcENT2g9lE',
+        'value': 1.0,
+        'currency': 'BRL'
+      });
+    }
+  });
+});
+
 // cabeçalho
 const h = document.getElementById('topo');
 if (h) addEventListener('scroll', () => h.classList.toggle('scrolled', scrollY > 20), {passive:true});
