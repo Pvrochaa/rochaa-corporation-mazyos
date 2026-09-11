@@ -441,14 +441,71 @@ footer .base-legal{display:flex;gap:18px;flex-wrap:wrap}
   .faixa-mais{order:3;margin-top:8px}
 }
 
-/* ---------- prova numérica ---------- */
-.provas{padding:clamp(28px,4vw,40px) 0}
-.provas-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px 20px}
-.prova-item strong{display:block;font-family:var(--tit);font-weight:600;font-size:clamp(1.7rem,3vw,2.1rem);
+/* ---------- prova numérica (banda) ---------- */
+.provas{padding:0}
+.provas-banda{position:relative;overflow:hidden;padding:clamp(36px,5vw,54px) 0;
+  background:linear-gradient(135deg,var(--carvao-2) 0%,var(--preto) 65%);
+  border-top:1px solid var(--linha);border-bottom:1px solid var(--linha)}
+.provas-banda::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at 15% 20%,rgba(123,63,228,.16),transparent 55%),
+             radial-gradient(ellipse at 85% 80%,rgba(27,79,216,.14),transparent 55%)}
+.provas-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:24px 20px}
+.prova-item{padding-left:20px;border-left:1px solid var(--linha-2)}
+.prova-item:first-child{border-left:0;padding-left:0}
+.prova-item strong{display:block;font-family:var(--tit);font-weight:700;font-size:clamp(2rem,3.6vw,2.7rem);
   letter-spacing:-.03em;line-height:1}
-.prova-item span{display:block;font-size:.78rem;color:var(--cinza-2);margin-top:8px;line-height:1.4}
-@media(max-width:820px){.provas-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.provas-grid{grid-template-columns:1fr}}
+.prova-item span{display:block;font-size:.78rem;color:var(--cinza-2);margin-top:10px;line-height:1.4}
+@media(max-width:820px){.provas-grid{grid-template-columns:1fr 1fr;row-gap:28px}
+  .prova-item:nth-child(3){border-left:0;padding-left:0}}
+@media(max-width:480px){.provas-grid{grid-template-columns:1fr}
+  .prova-item{border-left:0;padding-left:0;padding-top:16px;border-top:1px solid var(--linha-2)}
+  .prova-item:first-child{padding-top:0;border-top:0}}
+
+/* ---------- por que investir ---------- */
+.vantagens-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(24px,4vw,48px);align-items:center}
+.vant-col{display:flex;flex-direction:column;gap:20px}
+.vant-item{display:flex;gap:16px;align-items:flex-start}
+.vant-ic{flex:none;width:44px;height:44px;border-radius:14px;border:1px solid var(--linha);
+  background:var(--carvao);display:grid;place-items:center;color:var(--branco)}
+.vant-ic svg{width:20px;height:20px}
+.vant-item b{font-family:var(--tit);font-weight:600;font-size:1rem;display:block;margin-bottom:5px;letter-spacing:-.01em}
+.vant-item p{margin:0;font-size:.88rem;color:var(--cinza-2);line-height:1.55}
+.vant-graf{justify-self:center;flex:none;color:var(--branco)}
+.vantagens-cta{margin-top:clamp(32px,4vw,44px);text-align:center}
+@media(max-width:820px){
+  .vantagens-grid{grid-template-columns:1fr}
+  .vant-graf{order:-1;width:160px;height:160px;margin:0 auto}
+}
+
+/* ---------- destaques (spotlight ads / conteúdo) ---------- */
+.spotlight-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,48px);align-items:center}
+.spotlight.reverso .spotlight-grid{grid-template-columns:1fr 1fr}
+.spotlight.reverso .spotlight-txt{order:2}
+.spotlight.reverso .spotlight-tela{order:1}
+.spotlight-txt .acento{display:block;width:44px;height:3px;background:var(--branco);border-radius:2px;margin-bottom:18px}
+.spotlight-txt .rotulo{display:inline-flex;margin-bottom:14px}
+.spotlight-txt h2{font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.03em;line-height:1.12;max-width:16ch}
+.spotlight-txt p{margin-top:16px;font-size:.98rem;color:var(--cinza);line-height:1.65;max-width:46ch}
+.spotlight-tela{display:block}
+@media(max-width:820px){
+  .spotlight-grid{grid-template-columns:1fr}
+  .spotlight.reverso .spotlight-txt{order:1}
+  .spotlight.reverso .spotlight-tela{order:2}
+}
+
+/* ---------- competências ---------- */
+#competencias .competencias-tit{margin-top:14px;margin-bottom:32px;font-size:clamp(1.8rem,4vw,2.4rem);
+  letter-spacing:-.035em;max-width:20ch}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 40px}
+.skill{padding:13px 0;border-bottom:1px solid var(--linha)}
+.skill-cab{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px}
+.skill-cab span:first-child{font-family:var(--tit);font-weight:500;font-size:.94rem;color:var(--branco)}
+.skill-pct{font-family:var(--tit);font-weight:600;font-size:.86rem;color:var(--cinza-2);font-variant-numeric:tabular-nums}
+.skill-barra{height:6px;border-radius:999px;background:var(--carvao-2);overflow:hidden}
+.skill-barra span{display:block;height:100%;border-radius:999px;background:var(--cinza-2);transition:width 1s cubic-bezier(.2,.7,.3,1)}
+.skill[data-nivel="alta"] .skill-pct{color:#3ED598}
+.skill[data-nivel="alta"] .skill-barra span{background:#3ED598;box-shadow:0 0 12px -2px rgba(62,213,152,.6)}
+@media(max-width:640px){.skills-grid{grid-template-columns:1fr}}
 
 
 /* ---------- pacote completo (preço + entregas) ---------- */
