@@ -2,7 +2,7 @@
 .blog-capa{padding:150px 0 56px;border-bottom:1px solid var(--linha)}
 .blog-capa .wrap{max-width:1120px}
 .blog-capa .rotulo{margin-bottom:18px}
-.blog-capa h1{font-size:clamp(2.1rem,5vw,3.2rem);letter-spacing:-.035em;line-height:1.06;max-width:16ch}
+.blog-capa h1{font-size:clamp(2.1rem,5vw,3.2rem);letter-spacing:-.035em;line-height:1.06;max-width:44ch}
 .blog-capa p{margin-top:18px;font-size:1.05rem;color:var(--cinza);max-width:52ch;line-height:1.6}
 
 /* ---------- blog: grid de posts ---------- */
@@ -48,11 +48,12 @@
 .artigo ul,.artigo ol{margin:0 0 18px;padding-left:22px;color:var(--cinza)}
 .artigo li{margin-bottom:8px;line-height:1.65}
 .artigo strong{color:var(--branco);font-weight:600}
-.artigo a{color:var(--branco);text-decoration:underline;text-underline-offset:3px}
+.artigo a:not(.btn){color:var(--branco);text-decoration:underline;text-underline-offset:3px}
 .artigo blockquote{margin:28px 0;padding:18px 22px;border-left:2px solid var(--linha-2);color:var(--cinza)}
 
 .artigo-cta{margin-top:48px;padding:28px 32px;border-radius:22px;border:1px solid var(--linha-2);
   background:linear-gradient(180deg,var(--carvao-2),var(--carvao));display:flex;align-items:center;
   justify-content:space-between;gap:24px;flex-wrap:wrap}
 .artigo-cta p{margin:0;font-family:var(--tit);font-weight:500;font-size:1.05rem;color:var(--branco);max-width:40ch}
+.artigo-cta .btn-1{color:var(--preto)}
 @media(max-width:640px){.artigo-cta{flex-direction:column;align-items:flex-start;padding:22px}.artigo-cta .btn{width:100%}}
