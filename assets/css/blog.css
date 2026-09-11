@@ -1,0 +1,55 @@
+/* ---------- blog: capa ---------- */
+.blog-capa{padding:150px 0 56px;border-bottom:1px solid var(--linha)}
+.blog-capa .wrap{max-width:1120px}
+.blog-capa .rotulo{margin-bottom:18px}
+.blog-capa h1{font-size:clamp(2.1rem,5vw,3.2rem);letter-spacing:-.035em;line-height:1.06;max-width:16ch}
+.blog-capa p{margin-top:18px;font-size:1.05rem;color:var(--cinza);max-width:52ch;line-height:1.6}
+
+/* ---------- blog: grid de posts ---------- */
+.posts-secao{padding:56px 0 96px}
+.posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:900px){.posts-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.posts-grid{grid-template-columns:1fr}}
+.post-card{display:flex;flex-direction:column;border:1px solid var(--linha);border-radius:20px;
+  background:var(--carvao);padding:24px;text-decoration:none;
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.post-card:hover{transform:translateY(-4px);border-color:var(--linha-2);box-shadow:0 24px 48px -24px rgba(0,0,0,.9)}
+.post-card .data{font-family:var(--txt);font-size:.68rem;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--cinza-3)}
+.post-card h2{font-size:1.14rem;margin:14px 0 10px;letter-spacing:-.02em;line-height:1.3;color:var(--branco)}
+.post-card p{margin:0;font-size:.88rem;color:var(--cinza-2);line-height:1.55;flex:1}
+.post-card .ler{margin-top:18px;display:flex;align-items:center;gap:8px;font-family:var(--tit);
+  font-weight:600;font-size:.82rem;color:var(--branco)}
+.post-card .ler .seta{transition:transform .2s ease}
+.post-card:hover .ler .seta{transform:translateX(4px)}
+
+.posts-vazio{padding:48px 32px;text-align:center;color:var(--cinza-2);border:1px dashed var(--linha-2);border-radius:20px}
+.posts-vazio strong{display:block;color:var(--branco);font-family:var(--tit);font-size:1.1rem;margin-bottom:8px}
+
+/* ---------- artigo (post individual) ---------- */
+.artigo-capa{padding:150px 0 40px;border-bottom:1px solid var(--linha)}
+.artigo-capa .wrap{max-width:760px}
+.artigo-capa .voltar{display:inline-flex;align-items:center;gap:8px;margin-bottom:26px;
+  font-family:var(--tit);font-weight:600;font-size:.86rem;color:var(--cinza);text-decoration:none}
+.artigo-capa .voltar:hover{color:var(--branco)}
+.artigo-capa .data{font-family:var(--txt);font-size:.7rem;font-weight:600;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--cinza-3)}
+.artigo-capa h1{margin-top:16px;font-size:clamp(1.8rem,4.4vw,2.6rem);letter-spacing:-.035em;line-height:1.12}
+.artigo-capa .resumo{margin-top:16px;font-size:1.05rem;color:var(--cinza);line-height:1.6}
+
+.artigo{padding:48px 0 80px}
+.artigo .wrap{max-width:760px}
+.artigo h2{font-size:1.4rem;letter-spacing:-.02em;margin:40px 0 14px;line-height:1.25;color:var(--branco)}
+.artigo h3{font-size:1.12rem;letter-spacing:-.01em;margin:28px 0 10px;color:var(--branco)}
+.artigo p{font-size:1.02rem;color:var(--cinza);line-height:1.75;margin:0 0 18px}
+.artigo ul,.artigo ol{margin:0 0 18px;padding-left:22px;color:var(--cinza)}
+.artigo li{margin-bottom:8px;line-height:1.65}
+.artigo strong{color:var(--branco);font-weight:600}
+.artigo a{color:var(--branco);text-decoration:underline;text-underline-offset:3px}
+.artigo blockquote{margin:28px 0;padding:18px 22px;border-left:2px solid var(--linha-2);color:var(--cinza)}
+
+.artigo-cta{margin-top:48px;padding:28px 32px;border-radius:22px;border:1px solid var(--linha-2);
+  background:linear-gradient(180deg,var(--carvao-2),var(--carvao));display:flex;align-items:center;
+  justify-content:space-between;gap:24px;flex-wrap:wrap}
+.artigo-cta p{margin:0;font-family:var(--tit);font-weight:500;font-size:1.05rem;color:var(--branco);max-width:40ch}
+@media(max-width:640px){.artigo-cta{flex-direction:column;align-items:flex-start;padding:22px}.artigo-cta .btn{width:100%}}
