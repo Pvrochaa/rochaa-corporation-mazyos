@@ -457,6 +457,7 @@ footer .base-legal{display:flex;gap:18px;flex-wrap:wrap}
 .pacote-preco{border:1px solid var(--linha-2);border-radius:26px;padding:clamp(24px,3.5vw,36px);
   background:linear-gradient(180deg,var(--carvao-2),var(--carvao));display:flex;flex-direction:column}
 .pacote-preco .por{margin-top:4px}
+.pacote-resumo{margin:14px 0 0;font-size:1.02rem;color:var(--cinza);line-height:1.65}
 .pacote-meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:22px;padding-top:18px;border-top:1px solid var(--linha)}
 .pacote-meta .mono{display:block;margin-bottom:6px}
 .pacote-meta strong{font-family:var(--tit);font-weight:600;font-size:1.25rem;letter-spacing:-.02em}
