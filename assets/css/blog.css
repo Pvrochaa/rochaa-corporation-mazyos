@@ -37,6 +37,9 @@
 .artigo-capa h1{margin-top:16px;font-size:clamp(1.8rem,4.4vw,2.6rem);letter-spacing:-.035em;line-height:1.12}
 .artigo-capa .resumo{margin-top:16px;font-size:1.05rem;color:var(--cinza);line-height:1.6}
 
+.artigo-imagem{padding:36px 0 0}
+.artigo-imagem .wrap{max-width:520px}
+
 .artigo{padding:48px 0 80px}
 .artigo .wrap{max-width:760px}
 .artigo h2{font-size:1.4rem;letter-spacing:-.02em;margin:40px 0 14px;line-height:1.25;color:var(--branco)}
