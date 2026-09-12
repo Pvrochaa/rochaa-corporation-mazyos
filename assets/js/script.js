@@ -180,7 +180,7 @@ if (seletor) {
       'Ser encontrado no Google',
       'Receber clientes direto no WhatsApp',
     ]},
-    manutencao: { id: 'plano-manutencao', wa: 'https://wa.me/5521998632813?text=Oi%20Paulo!%20Vi%20o%20site%20da%20Rochaa%20e%20quero%20tirar%20uma%20d%C3%BAvida%20sobre%20o%20plano%20de%20Manuten%C3%A7%C3%A3o.', nome: 'Manutenção', preco: 'R$ 300/mês', prazo: 'Sem fidelidade — cancele quando quiser', beneficios: [
+    manutencao: { id: 'plano-manutencao', wa: 'https://wa.me/5521998632813?text=Oi%20Paulo!%20Vi%20o%20site%20da%20Rochaa%20e%20quero%20tirar%20uma%20d%C3%BAvida%20sobre%20o%20plano%20de%20Manuten%C3%A7%C3%A3o.', nome: 'Manutenção', preco: 'R$ 379/mês', prazo: 'Fidelidade mínima de 6 meses', beneficios: [
       'Manter o site que você já tem sempre atualizado',
       'Hospedagem, domínio e backup cobertos',
       'Suporte direto por WhatsApp',
