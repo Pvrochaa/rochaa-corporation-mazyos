@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Carrossel — 5 motivos pro paciente fechar o site da clínica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg1:#0B0822; --bg2:#050410;
+    --roxo:#8B5CF6; --lilas:#BDB4D6; --lilas-2:#8F86AE; --branco:#FFFFFF;
+    --linha:rgba(167,139,250,.22); --grade:rgba(255,255,255,.055);
+    --tit:"Archivo","Inter",sans-serif; --txt:"Inter",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#222;font-family:var(--txt);-webkit-font-smoothing:antialiased}
+  .slide{
+    width:1080px;height:1350px;position:relative;overflow:hidden;color:var(--branco);
+    background:radial-gradient(900px 700px at 15% 0%,#1B1246 0%,transparent 60%),
+               radial-gradient(700px 600px at 100% 100%,#16103A 0%,transparent 60%),
+               linear-gradient(180deg,var(--bg1),var(--bg2));
+  }
+  body.all .slide{margin:0 auto 24px}
+  .frame{position:absolute;inset:56px;border:1.5px solid var(--linha);border-radius:30px;overflow:hidden;
+    background-image:repeating-linear-gradient(180deg,transparent 0 89px,var(--grade) 89px 90px)}
+  .topo{position:absolute;left:0;right:0;top:0;height:100px;border-bottom:1.5px solid var(--linha);background:rgba(11,8,34,.55);z-index:3}
+  .dots{position:absolute;top:44px;left:34px;display:flex;gap:10px}
+  .dots i{width:14px;height:14px;border-radius:50%;background:#3E3860}
+  .dots i:first-child{background:var(--roxo)}
+  .url{position:absolute;top:32px;left:112px;height:38px;padding:0 24px;border-radius:999px;background:rgba(139,92,246,.12);
+    font-size:19px;font-weight:500;color:#6E64A0;line-height:38px}
+  .tab{position:absolute;top:72px;left:64px;font-size:23px;font-weight:700;color:var(--lilas)}
+  .handle{position:absolute;top:36px;right:36px;font-size:22px;font-weight:600;color:var(--lilas-2)}
+  .conteudo{position:absolute;left:64px;right:64px;bottom:150px;z-index:2}
+  .kicker{font-size:19px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--roxo);margin-bottom:26px}
+  h1{font-family:var(--tit);font-variation-settings:'wdth' 104,'wght' 800;font-size:104px;line-height:.97;letter-spacing:-.04em}
+  h1 em,h2 em{font-style:normal;color:var(--roxo)}
+  h2{font-family:var(--tit);font-variation-settings:'wdth' 104,'wght' 800;font-size:78px;line-height:1.02;letter-spacing:-.035em;max-width:12ch}
+  .regua{width:96px;height:6px;border-radius:3px;background:var(--roxo);margin:40px 0 34px}
+  .sub{font-size:32px;line-height:1.45;color:var(--lilas);max-width:27ch}
+  .sub b{color:var(--branco);font-weight:600}
+  .rodape{position:absolute;left:64px;right:64px;bottom:60px;display:flex;justify-content:space-between;align-items:center;
+    font-size:22px;font-weight:600;color:var(--lilas-2);z-index:3}
+  .rodape .arr{color:var(--roxo);display:flex;align-items:center;gap:10px}
+  .rodape .arr::after{content:"";width:0;height:0;border-left:12px solid var(--roxo);border-top:8px solid transparent;border-bottom:8px solid transparent}
+
+  /* numeral gigante (slides de erro) */
+  .num{position:absolute;right:40px;top:120px;font-family:var(--tit);font-variation-settings:'wdth' 104,'wght' 800;
+    font-size:420px;line-height:1;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:2px rgba(139,92,246,.45);z-index:1}
+  .fix{margin-top:34px;padding:26px 30px;border-radius:22px;border:1.5px solid var(--linha);background:rgba(11,8,34,.7);display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start}
+  .fix i{font-style:normal;font-size:15px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--roxo);padding-top:8px}
+  .fix p{font-size:28px;line-height:1.4;color:var(--branco)}
+
+  /* recap */
+  .recap{list-style:none;margin-top:36px;display:grid;gap:14px}
+  .recap li{display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:center;font-size:29px;color:var(--lilas);padding:16px 22px;border:1.5px solid var(--linha);border-radius:20px;background:rgba(11,8,34,.6)}
+  .recap li b{color:var(--branco);font-weight:600}
+  .recap li i{font-style:normal;width:56px;height:56px;border-radius:16px;background:var(--roxo);color:#fff;
+    font-family:var(--tit);font-variation-settings:'wdth' 104,'wght' 800;font-size:24px;display:grid;place-items:center}
+
+  /* cta */
+  .slide.cta{background:radial-gradient(900px 800px at 20% 10%,#9D74FF 0%,transparent 60%),linear-gradient(180deg,#6D3FE0,#4B22B8)}
+  .slide.cta .frame{border-color:rgba(255,255,255,.32);background-image:repeating-linear-gradient(180deg,transparent 0 89px,rgba(255,255,255,.08) 89px 90px)}
+  .slide.cta .topo{border-bottom-color:rgba(255,255,255,.32);background:rgba(255,255,255,.06)}
+  .slide.cta .dots i{background:rgba(255,255,255,.35)} .slide.cta .dots i:first-child{background:#fff}
+  .slide.cta .url{background:rgba(255,255,255,.14);color:rgba(255,255,255,.75)}
+  .slide.cta .tab,.slide.cta .handle{color:rgba(255,255,255,.85)}
+  .slide.cta .kicker{color:rgba(255,255,255,.75)}
+  .slide.cta .regua{background:#fff}
+  .slide.cta .sub{color:rgba(255,255,255,.88)}
+  .slide.cta .rodape{color:rgba(255,255,255,.75)}
+  .slide.cta .botao{display:inline-flex;align-items:center;margin-top:44px;padding:26px 44px;border-radius:999px;background:#fff;color:#3A1C99;
+    font-family:var(--tit);font-variation-settings:'wdth' 104,'wght' 700;font-size:32px;letter-spacing:-.01em}
+  .slide.cta .link{margin-top:26px;font-size:26px;color:rgba(255,255,255,.85);font-weight:500}
+</style>
+</head>
+<body>
+
+<!-- 01 CAPA -->
+<section class="slide" id="s1">
+  <div class="frame">
+    <div class="topo"><div class="dots"><i></i><i></i><i></i></div><div class="url">rochaacorporation.com</div><div class="tab">Rochaa Corporation</div><div class="handle">@rochaacorporation</div></div>
+    <div class="conteudo">
+      <div class="kicker">Pra donos de clínica</div>
+      <h1>O paciente achou seu site. <em>E fechou em 3 segundos.</em></h1>
+      <div class="regua"></div>
+      <p class="sub">Cinco motivos pra isso acontecer — e o que corrigir em cada um.</p>
+    </div>
+    <div class="rodape"><span>01/08</span><span class="arr">arrasta</span></div>
+  </div>
+</section>
+
+<!-- 02 ERRO 1 -->
+<section class="slide" id="s2">
+  <div class="frame">
+    <div class="topo"><div class="dots"><i></i><i></i><i></i></div><div class="url">rochaacorporation.com</div><div class="handle">@rochaacorporation</div></div>
+    <div class="num">1</div>
+    <div class="conteudo">
+      <div class="kicker">Motivo 01</div>
+      <h2>Nenhuma prova na primeira tela.</h2>
+      <div class="regua"></div>
+      <p class="sub">Nota do Google, anos de casa, quantos pacientes já passaram por ali. Se isso está lá embaixo, ninguém rola pra achar.</p>
+      <div class="fix"><i>Correção</i><p>Nota, tempo de mercado e especialidade visíveis antes de rolar.</p></div>
+    </div>
+    <div class="rodape"><span>02/08</span><span class="arr">arrasta</span></div>
+  </div>
+</section>
+
+<!-- 03 ERRO 2 -->
+<section class="slide" id="s3">
+  <div class="frame">
+    <div class="topo"><div class="dots"><i></i><i></i><i></i></div><div class="url">rochaacorporation.com</div><div class="handle">@rochaacorporation</div></div>
+    <div class="num">2</div>
+    <div class="conteudo">
+      <div class="kicker">Motivo 02</div>
+      <h2>O WhatsApp está escondido.</h2>
+      <div class="regua"></div>
+      <p class="sub">A pessoa quer marcar. Se precisa achar "Contato", copiar o número e abrir outro app, ela volta pro Google e clica no próximo.</p>
+      <div class="fix"><i>Correção</i><p>Botão fixo em toda página, abrindo o WhatsApp com a mensagem já escrita.</p></div>
+    </div>
+    <div class="rodape"><span>03/08</span><span class="arr">arrasta</span></div>
+  </div>
+</section>
+
+<!-- 04 ERRO 3 -->
+<section class="slide" id="s4">
+  <div class="frame">
+    <div class="topo"><div class="dots"><i></i><i></i><i></i></div><div class="url">rochaacorporation.com</div><div class="handle">@rochaacorporation</div></div>
+    <div class="num">3</div>
+    <div class="conteudo">
+      <div class="kicker">Motivo 03</div>
+      <h2>Fala de você. Não do problema dele.</h2>
+      <div class="regua"></div>
+      <p class="sub">Quem está com dor de dente às 23h não quer ler "missão, visão e valores". Quer saber se você atende hoje e onde fica.</p>
+      <div class="fix"><i>Correção</i><p>Primeira frase responde: o que você resolve, pra quem, e como chamar agora.</p></div>
+    </div>
+    <div class="rodape"><span>04/08</span><span class="arr">arrasta</span></div>
+  </div>
+</section>
+
+<!-- 05 ERRO 4 -->
+<section class="slide" id="s5">
+  <div class="frame">
+    <div class="topo"><div class="dots"><i></i><i></i><i></i></div><div class="url">rochaacorporation.com</div><div class="handle">@rochaacorporation</div></div>
+    <div class="num">4</div>
+    <div class="conteudo">
+      <div class="kicker">Motivo 04</div>
+      <h2>Demora pra abrir no celular.</h2>
+      <div class="regua"></div>
+      <p class="sub">Foto pesada, vídeo de fundo, construtor genérico. Cada segundo de tela branca é alguém desistindo — e o Google percebe e te empurra pra baixo.</p>
+      <div class="fix"><i>Correção</i><p>Site leve, feito pra celular primeiro. Abre antes de a pessoa pensar em voltar.</p></div>
+    </div>
+    <div class="rodape"><span>05/08</span><span class="arr">arrasta</span></div>
+  </div>
+</section>
+
+<!-- 06 ERRO 5 -->
+<section class="slide" id="s6">
+  <div class="frame">
+    <div class="topo"><div class="dots"><i></i><i></i><i></i></div><div class="url">rochaacorporation.com</div><div class="handle">@rochaacorporation</div></div>
+    <div class="num">5</div>
+    <div class="conteudo">
+      <div class="kicker">Motivo 05</div>
+      <h2>A ficha do Google conta outra história.</h2>
+      <div class="regua"></div>
+      <p class="sub">Horário errado, foto de 2019, avaliação sem resposta. O paciente vê a ficha antes do site — e desconfia dos dois.</p>
+      <div class="fix"><i>Correção</i><p>Google Meu Negócio atualizado e toda avaliação respondida, inclusive as ruins.</p></div>
+    </div>
+    <div class="rodape"><span>06/08</span><span class="arr">arrasta</span></div>
+  </div>
+</section>
+
+<!-- 07 RECAP -->
+<section class="slide" id="s7">
+  <div class="frame">
+    <div class="topo"><div class="dots"><i></i><i></i><i></i></div><div class="url">rochaacorporation.com</div><div class="handle">@rochaacorporation</div></div>
+    <div class="conteudo">
+      <div class="kicker">Salva esse</div>
+      <h2>Mesmo tráfego. <em>Mais paciente.</em></h2>
+      <ul class="recap">
+        <li><i>1</i><div><b>Prova na primeira tela</b> — nota, tempo de casa</div></li>
+        <li><i>2</i><div><b>WhatsApp fixo</b> com mensagem pronta</div></li>
+        <li><i>3</i><div><b>Primeira frase</b> sobre o problema do paciente</div></li>
+        <li><i>4</i><div><b>Site leve</b>, pensado pro celular</div></li>
+        <li><i>5</i><div><b>Ficha do Google</b> atualizada e respondida</div></li>
+      </ul>
+    </div>
+    <div class="rodape"><span>07/08</span><span class="arr">arrasta</span></div>
+  </div>
+</section>
+
+<!-- 08 CTA -->
+<section class="slide cta" id="s8">
+  <div class="frame">
+    <div class="topo"><div class="dots"><i></i><i></i><i></i></div><div class="url">rochaacorporation.com</div><div class="handle">@rochaacorporation</div></div>
+    <div class="conteudo">
+      <div class="kicker">Quer saber quantos desses o seu site tem?</div>
+      <h2>Manda o link no direct.</h2>
+      <div class="regua"></div>
+      <p class="sub">Eu abro no celular, passo pelos cinco pontos e te devolvo o que está segurando paciente. Sem compromisso.</p>
+      <div class="botao">Manda um direct</div>
+      <p class="link">ou chama no WhatsApp pelo link da bio</p>
+    </div>
+    <div class="rodape"><span>08/08</span><span>rochaacorporation.com</span></div>
+  </div>
+</section>
+
+<script>
+  const n = new URLSearchParams(location.search).get('slide');
+  if (n) { document.querySelectorAll('.slide').forEach(s => { if (s.id !== 's' + n) s.remove(); }); document.body.style.background = '#000'; }
+  else { document.body.classList.add('all'); }
+</script>
+</body>
+</html>
