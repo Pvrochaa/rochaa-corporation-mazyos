@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Stories — posicionamento Rochaa Corporation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg1:#0B0822; --bg2:#050410;
+    --roxo:#8B5CF6; --lilas:#BDB4D6; --lilas-2:#8F86AE; --branco:#FFFFFF;
+    --linha:rgba(167,139,250,.22);
+    --tit:"Archivo","Inter",sans-serif; --txt:"Inter",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#222;font-family:var(--txt);-webkit-font-smoothing:antialiased}
+  body.all .story{margin:0 auto 24px}
+  .story{
+    width:1080px;height:1920px;position:relative;overflow:hidden;color:var(--branco);
+    background:radial-gradient(900px 900px at 20% 0%,#1B1246 0%,transparent 55%),
+               radial-gradient(800px 800px at 100% 100%,#16103A 0%,transparent 55%),
+               linear-gradient(180deg,var(--bg1),var(--bg2));
+  }
+  .safe{position:absolute;inset:150px 72px 220px 72px;display:flex;flex-direction:column;justify-content:center}
+  .brand{position:absolute;top:70px;left:72px;display:flex;align-items:center;gap:14px;font-size:24px;font-weight:600;color:var(--lilas)}
+  .brand i{width:36px;height:36px;border-radius:10px;background:var(--roxo);display:inline-block}
+  .kicker{font-size:24px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--roxo);margin-bottom:34px}
+  h1{font-family:var(--tit);font-variation-settings:'wdth' 104,'wght' 800;font-size:96px;line-height:1.01;letter-spacing:-.035em;max-width:11ch}
+  .regua{width:110px;height:7px;border-radius:4px;background:var(--roxo);margin:44px 0 40px}
+  .sub{font-size:38px;line-height:1.48;color:var(--lilas);max-width:19ch}
+  .rodape{position:absolute;left:72px;right:72px;bottom:90px;display:flex;justify-content:space-between;align-items:center;font-size:26px;font-weight:600;color:var(--lilas-2)}
+  .cta{position:absolute;left:72px;right:72px;bottom:90px;display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+  .cta .pill{padding:22px 40px;border-radius:999px;background:var(--roxo);color:#fff;font-family:var(--tit);font-variation-settings:'wdth' 104,'wght' 700;font-size:30px;display:inline-flex;align-items:center;gap:12px}
+  .cta .pill::after{content:"";width:0;height:0;border-left:11px solid #fff;border-top:7px solid transparent;border-bottom:7px solid transparent}
+  .cta .arrow-up{font-size:44px;color:var(--roxo)}
+  .handle{font-size:24px;font-weight:600;color:var(--lilas-2)}
+
+  /* variação de fundo pra story 4 (CTA direto) */
+  .story.destaque{background:radial-gradient(900px 900px at 20% 0%,#9D74FF 0%,transparent 55%),linear-gradient(180deg,#6D3FE0,#4B22B8)}
+  .story.destaque .kicker{color:rgba(255,255,255,.8)}
+  .story.destaque .sub{color:rgba(255,255,255,.9)}
+  .story.destaque .regua{background:#fff}
+  .story.destaque .brand{color:rgba(255,255,255,.85)}
+  .story.destaque .brand i{background:#fff}
+  .story.destaque .cta .pill{background:#fff;color:#3A1C99}
+  .story.destaque .cta .pill::after{border-left-color:#3A1C99}
+  .story.destaque .handle{color:rgba(255,255,255,.8)}
+</style>
+</head>
+<body>
+
+<!-- 01 — Puxa pro carrossel novo -->
+<section class="story" id="st1">
+  <div class="brand"><i></i>Rochaa Corporation</div>
+  <div class="safe">
+    <div class="kicker">Novo no feed</div>
+    <h1>5 motivos pro paciente fechar pelo site.</h1>
+    <div class="regua"></div>
+    <p class="sub">Já vi clínica perder consulta pelos mesmos 5 erros. Tá no carrossel — dá uma olhada.</p>
+  </div>
+  <div class="cta">
+    <span class="arrow-up">↑</span>
+    <span class="pill">Corre pro feed</span>
+  </div>
+</section>
+
+<!-- 02 — Diferencial / como trabalha -->
+<section class="story" id="st2">
+  <div class="brand"><i></i>Rochaa Corporation</div>
+  <div class="safe">
+    <div class="kicker">Como eu trabalho</div>
+    <h1>Faço o site antes de vender.</h1>
+    <div class="regua"></div>
+    <p class="sub">Construo primeiro, mostro depois. O direct abre com o link pronto — não com proposta em PDF.</p>
+  </div>
+  <div class="rodape"><span class="handle">@rochaacorporation</span><span>manda um oi →</span></div>
+</section>
+
+<!-- 03 — Tip de valor (GMB) -->
+<section class="story" id="st3">
+  <div class="brand"><i></i>Rochaa Corporation</div>
+  <div class="safe">
+    <div class="kicker">Antes de abrir o site</div>
+    <h1>O paciente vê sua ficha do Google primeiro.</h1>
+    <div class="regua"></div>
+    <p class="sub">Nota, horário, avaliação sem resposta. Ele decide ali — antes de clicar em qualquer link.</p>
+  </div>
+  <div class="rodape"><span class="handle">@rochaacorporation</span><span>confere a tua agora</span></div>
+</section>
+
+<!-- 04 — CTA direto -->
+<section class="story destaque" id="st4">
+  <div class="brand"><i></i>Rochaa Corporation</div>
+  <div class="safe">
+    <div class="kicker">Direto ao ponto</div>
+    <h1>Sua clínica ainda não tem site?</h1>
+    <div class="regua"></div>
+    <p class="sub">Eu construo, você aprova, publica no seu domínio.</p>
+  </div>
+  <div class="cta">
+    <span class="pill">Manda DM</span>
+    <span class="handle">@rochaacorporation</span>
+  </div>
+</section>
+
+<script>
+  const n = new URLSearchParams(location.search).get('slide');
+  if (n) { document.querySelectorAll('.story').forEach(s => { if (s.id !== 'st' + n) s.remove(); }); document.body.style.background = '#000'; }
+  else { document.body.classList.add('all'); }
+</script>
+</body>
+</html>
