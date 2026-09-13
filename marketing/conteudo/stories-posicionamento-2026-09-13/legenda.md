@@ -4,9 +4,8 @@ Um por dia, nessa ordem. São stories, não tem legenda de feed — só a arte j
 O que fazer em cada um, na hora de postar:
 
 ## Dia 1 — story-01.png
-Adiciona o sticker de **link** apontando pro post do carrossel "5 motivos" e cola em cima
-da seta/"Corre pro feed". Se não tiver link direto, troca o CTA por "manda um oi que eu mando
-o link" na resposta de quem reagir.
+Story solo, não depende de nenhum post do feed. Deixa a caixinha de resposta ativa —
+quem concordar com o "3 segundos" já é gancho pra puxar conversa.
 
 ## Dia 2 — story-02.png
 Deixa a caixinha de resposta do story ativa (já vem por padrão). Quem responder "oi" já

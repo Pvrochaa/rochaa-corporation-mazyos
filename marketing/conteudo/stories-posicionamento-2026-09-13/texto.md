@@ -4,12 +4,12 @@ Tema: posicionamento da Rochaa Corporation. Um por dia. Ordem sugerida: 1 → 2 
 
 ---
 
-## Story 1 — Puxa gente pro carrossel novo
+## Story 1 — Hook standalone
 
-Kicker: Novo no feed
-Headline: 5 motivos pro paciente fechar pelo site
-Sub: Já vi clínica perder consulta pelos mesmos 5 erros. Tá no carrossel — dá uma olhada.
-CTA: Corre pro feed ↑
+Kicker: Direto da prática
+Headline: 3 segundos. É o tempo que o paciente dá pro seu site.
+Sub: Se a prova — nota, tempo de casa, especialidade — não aparece nesse tempo, ele já foi pro próximo.
+CTA: Confere o teu
 
 ## Story 2 — Diferencial / como trabalha
 
